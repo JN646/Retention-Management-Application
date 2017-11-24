@@ -18,33 +18,59 @@ include("../partials/header.php");
 						<div class="alert alert-danger" role="alert">
 							Feature not implemented yet.
 						</div>
+						<div class="col-md-9">
+							<h5>Tools</h5>
+							<ul class="nav">
+								<li class="nav-item">
+									<a class="nav-link" href="#">Mark Read</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">Mark Unread</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link btn-outline-success" href="#">Compose</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link btn-outline-danger" href="#">Delete</a>
+								</li>
+							</ul>
+						</div>
 				<?php
 				// Attempt select query execution
-				$sql = "SELECT * FROM client_info";
+				$sql = "SELECT * FROM inbox";
 				if($result = mysqli_query($mysqli, $sql)){
 				    if(mysqli_num_rows($result) > 0){
 				        echo "<table id='table_search' class='table table-bordered'>";
 				            echo "<tr>";
+				                echo "<th class='text-center'></th>";
 				                echo "<th class='text-center' onclick='sortTable(1)'>Date</th>";
 				                echo "<th class='text-center' onclick='sortTable(2)'>From</th>";
 				                echo "<th class='text-center' onclick='sortTable(3)'>Subject</th>";
 				                echo "<th class='text-center' onclick='sortTable(4)'>Priority</th>";
-				                echo "<th class='text-center' style='width: 32px'>Status</th>";
+				                echo "<th class='text-center'>Status</th>";
+				                echo "<th class='text-center'>Open</th>";
 				            echo "</tr>";
 				        while($row = mysqli_fetch_array($result)){
 				            echo "<tr>";
-				                echo "<td>" . $row['client_fname'] . "</td>";
-				                echo "<td>" . $row['client_lname'] . "</td>";
-				                echo "<td>" . $row['client_age'] . "</td>";
-				                echo "<td>" . $row['client_fname'] . "</td>";
-				                echo "<td>" . $row['client_lname'] . "</td>";
+				                echo "<td class='text-center'>
+								<div class='form-check'>
+									  <label class='form-check-label'>
+										<input class='form-check-input' type='checkbox' id='blankCheckbox' value='option1' aria-label='...'>
+									  </label>
+								</td>";
+				                echo "<td class='text-center'>" . $row['email_date'] . "</td>";
+				                echo "<td class='text-center'>" . $row['email_from'] . "</td>";
+				                echo "<td>" . $row['email_subject'] . "</td>";
+				                echo "<td class='text-center'>" . $row['email_priority'] . "</td>";
+				                echo "<td class='text-center'>" . $row['email_status'] . "</td>";
+				                echo "<td class='text-center'><a href=#".$row['email_id'].">Open</a></td>";
 				            echo "</tr>";
 				        }
 				        echo "</table>";
 				        // Free result set
 				        mysqli_free_result($result);
 				    } else{
-				        echo "No jobs were found.";
+				        echo "No mail were found.";
 				    }
 				} else{
 				    echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
@@ -53,6 +79,24 @@ include("../partials/header.php");
 				// Close connection
 				mysqli_close($mysqli);
 				?>
+				<nav aria-label="...">
+				  <ul class="pagination">
+					<li class="page-item disabled">
+					  <span class="page-link">Previous</span>
+					</li>
+					<li class="page-item"><a class="page-link" href="#">1</a></li>
+					<li class="page-item active">
+					  <span class="page-link">
+						2
+						<span class="sr-only">(current)</span>
+					  </span>
+					</li>
+					<li class="page-item"><a class="page-link" href="#">3</a></li>
+					<li class="page-item">
+					  <a class="page-link" href="#">Next</a>
+					</li>
+				  </ul>
+				</nav>
 				</div>
 			</div>
 		</div>
