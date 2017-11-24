@@ -14,5 +14,6 @@
 	<ul class="nav flex-column">
 		<li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
 		<li class="nav-item"><a class="nav-link" href="http://localhost/reten/inbox/mail.php">Inbox</a></li>
+		<li class="nav-item"><a class="nav-link" href="http://localhost/reten/inbox/todo.php">Todo</a></li>
 	</ul>
 </div>
