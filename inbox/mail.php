@@ -15,8 +15,8 @@ include("../partials/header.php");
 				<?php include("../partials/nav.php"); ?>
 				<div class="col-md-11">
 					<h1 class="display-4">Inbox</h1>
-						<div class="alert alert-danger" role="alert">
-							Feature not implemented yet.
+						<div class="alert alert-warning" role="alert">
+							Feature partially implemented.
 						</div>
 						<div class="col-md-9">
 							<h5>Tools</h5>
@@ -52,7 +52,7 @@ include("../partials/header.php");
 				            echo "</tr>";
 				        while($row = mysqli_fetch_array($result)){
 				            echo "<tr>";
-				                echo "<td class='text-center'>
+				                echo "<td class='text-center' style='width: 16px'>
 								<div class='form-check'>
 									  <label class='form-check-label'>
 										<input class='form-check-input' type='checkbox' id='blankCheckbox' value='option1' aria-label='...'>
