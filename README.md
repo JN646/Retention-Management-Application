@@ -5,5 +5,5 @@ This is a work in progress application that combines a few concepts together int
 * Call logging
 * Data analytics and insights
 
-## Protype UI
+## Protoype UI
 This application makes use of the Bootstrap v4 library to assist with the UI and UX elements. These may be changed in later versions.
