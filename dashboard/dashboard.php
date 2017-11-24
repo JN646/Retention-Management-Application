@@ -5,7 +5,9 @@ require_once '../config/DBconfig.php';
 // Load Header
 include("../partials/header.php");
 ?>
-
+<head>
+	<title>Dashboard</title>
+</head>
 <body>
     <div class="container-fluid">
 		<div class="col-md-12">
