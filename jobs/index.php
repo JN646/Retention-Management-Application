@@ -15,7 +15,7 @@ include("../config/DBConfig.php");
 		<div class="row">
 			<?php include("../partials/nav.php"); ?>
 			<div class="col-md-11">
-				<h1>Jobs</h1>
+				<h1 class="display-4">Jobs</h1>
 				<div class="row">
 					<div class="col-md-9">
 						<h5>Tools</h5>
