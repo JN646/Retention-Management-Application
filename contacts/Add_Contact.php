@@ -1,4 +1,10 @@
-<?php include("../partials/header.php"); ?>
+<?php
+// Include config file
+require_once($_SERVER["DOCUMENT_ROOT"] . "/reten/config/DBconfig.php");
+
+// Load Header
+include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
+?>
 </head>
 	<title>Add Contact</title>
 </head>

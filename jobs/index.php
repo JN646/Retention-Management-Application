@@ -1,9 +1,9 @@
 <?php
-//Header
-include("../partials/header.php");
- 
-//DB Config
-include("../config/DBConfig.php");
+// Include config file
+require_once($_SERVER["DOCUMENT_ROOT"] . "/reten/config/DBconfig.php");
+
+// Load Header
+include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
  ?>
  <head>
 	<META HTTP-EQUIV="refresh" CONTENT="5">

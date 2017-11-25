@@ -1,9 +1,9 @@
 <?php
 // Include config file
-require_once '../config/DBconfig.php';
+require_once($_SERVER["DOCUMENT_ROOT"] . "/reten/config/DBconfig.php");
 
 // Load Header
-include("../partials/header.php");
+include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
  
 // Define variables and initialize with empty values
 $username = $password = "";
