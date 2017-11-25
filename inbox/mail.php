@@ -71,8 +71,15 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 				                echo "<td class='text-center'>" . $row['email_from'] . "</td>";
 				                echo "<td>" . $row['email_subject'] . "</td>";
 				                echo "<td class='text-center'>" . $row['email_priority'] . "</td>";
-				                echo "<td class='text-center'>" . $row['email_status'] . "</td>";
-				                echo "<td class='text-center'><a href=#".$row['email_id'].">Open</a></td>";
+								
+								if($row['email_status'] == 1){
+									echo "<td class='text-center'>Read</td>";
+								}
+								else{
+									echo "<td class='text-center'>Unread</td>";									
+								}
+				                
+								echo "<td class='text-center'><a href=#".$row['email_id'].">Open</a></td>";
 				            echo "</tr>";
 				        }
 				        echo "</table>";
