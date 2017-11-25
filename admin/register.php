@@ -1,9 +1,9 @@
 <?php
 // Include config file
-require_once($_SERVER["DOCUMENT_ROOT"] . "/reten/config/DBconfig.php");
+require_once '../config/DBconfig.php';
 
 // Load Header
-include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
+include("../partials/header.php");
  
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $username_err = "Please enter a username.";
     } else{
         // Prepare a select statement
-        $sql = "SELECT user_id FROM users WHERE user_name = ?";
+        $sql = "SELECT id FROM users WHERE username = ?";
         
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
@@ -46,12 +46,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Validate password
-    if(empty(trim($_POST['user_password']))){
+    if(empty(trim($_POST['password']))){
         $password_err = "Please enter a password.";     
-    } elseif(strlen(trim($_POST['user_password'])) < 6){
-        $password_err = "Password must have atleast 6 characters.";
+    } elseif(strlen(trim($_POST['password'])) < 6){
+        $password_err = "Password must have at least 6 characters.";
     } else{
-        $password = trim($_POST['user_password']);
+        $password = trim($_POST['password']);
     }
     
     // Validate confirm password
@@ -68,7 +68,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO users (user_name, user_password) VALUES (?, ?)";
+        $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
          
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
@@ -81,7 +81,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // Redirect to login page
-                header("location: ../index.php");
+                header("location: ../dashboard/dashboard.php");
             } else{
                 echo "Something went wrong. Please try again later.";
             }
@@ -123,5 +123,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <p>Already have an account? <a href="login.php">Login here</a>.</p>
         </form>
     </div>
-</body>
 <?php include("../partials/footer.php"); ?>	
+</body>
+</html>
