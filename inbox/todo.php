@@ -22,7 +22,7 @@ include("../partials/header.php");
 							<h5>Tools</h5>
 							<ul class="nav">
 								<li class="nav-item">
-									<a class="nav-link btn-outline-success" href="mail_compose.php">Add</a>
+									<a class="nav-link btn-outline-success" href="todo_compose.php">Add</a>
 								</li>
 								<li class="nav-item">
 									<a class="nav-link btn-outline-danger" href="#">Delete</a>

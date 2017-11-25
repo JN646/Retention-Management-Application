@@ -21,7 +21,8 @@ include("../partials/header.php");
 					<div class="form-group">
 						<label for="formGroupExampleInput2">Content:</label> 
 						<textarea class="form-control" id="exampleTextarea" rows="10"></textarea>
-					</div><button class="btn btn-primary" type="submit">Send</button>
+					</div>
+					<button class="btn btn-primary" type="submit">Send</button>
 				</form>
 			</div>
 		</div>
