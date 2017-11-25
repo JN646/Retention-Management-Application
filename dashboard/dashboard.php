@@ -18,20 +18,32 @@ include("../partials/header.php");
 						<div class="alert alert-danger" role="alert">
 							Feature not implemented yet.
 						</div>
-					<p>Your dashboard.</p>
-					<h1>Jobs</h1>
-					<ul>
-						<li><a href='../jobs/index.php'>Available</a></li>
-					</ul>
-					<h1>Follow Up</h1>
-					<ul>
-						<li><a href=#>Tasks</a></li>
-					</ul>
-					<h1>Inbox</h1>
-					<ul>
-						<li><a href='../inbox/messages/index.php'>Messages</a></li>
-						<li><a href=#>Todo</a></li>
-					</ul>
+						<div class="row">
+							<div class="col-md-4">
+								<div class="col-md-12 card">
+									<div class="card-body">
+										<h1 class="card-title text-center display-4">Success Rate</h1>
+										<h1 class="text-center">85%</h1>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="col-md-12 card">
+									<div class="card-body">
+										<h1 class="card-title text-center display-4">Assigned</h1>
+										<h1 class="text-center">RED</h1>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="col-md-12 card">
+									<div class="card-body">
+										<h1 class="card-title text-center display-4">EXP</h1>
+										<h1 class="text-center">0</h1>
+									</div>
+								</div>
+							</div>
+						</div>
 				</div>
 			</div>
 		</div>
