@@ -9,3 +9,6 @@ This is a work in progress application that combines a few concepts together int
 
 ## Protoype UI
 This application makes use of the Bootstrap v4 library to assist with the UI and UX elements. These may be changed in later versions.
+
+## Database
+Database is now required to use the application. All pages are now locked behind a username and password.
