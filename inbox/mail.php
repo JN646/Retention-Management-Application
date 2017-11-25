@@ -15,7 +15,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 }
 ?>
 <head>
-	<title>Dashboard</title>
+	<title>Mail</title>
 </head>
 <body>
     <div class="container-fluid">
@@ -31,10 +31,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 							<h5>Tools</h5>
 							<ul class="nav">
 								<li class="nav-item">
-									<a class="nav-link" href="#">Mark Read</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">Mark Unread</a>
+									<a class="nav-link" href="#">Read/Unread</a>
 								</li>
 								<li class="nav-item">
 									<a class="nav-link btn-outline-success" href="mail_compose.php">Compose</a>
@@ -44,57 +41,62 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 								</li>
 							</ul>
 						</div>
-				<?php
-				// Attempt select query execution
-				$sql = "SELECT * FROM inbox";
-				if($result = mysqli_query($mysqli, $sql)){
-				    if(mysqli_num_rows($result) > 0){
-				        echo "<table id='table_search' class='table table-bordered'>";
-				            echo "<tr>";
-				                echo "<th class='text-center'></th>";
-				                echo "<th class='text-center' onclick='sortTable(1)'>Date</th>";
-				                echo "<th class='text-center' onclick='sortTable(2)'>From</th>";
-				                echo "<th class='text-center' onclick='sortTable(3)'>Subject</th>";
-				                echo "<th class='text-center' onclick='sortTable(4)'>Priority</th>";
-				                echo "<th class='text-center'>Status</th>";
-				                echo "<th class='text-center'>Open</th>";
-				            echo "</tr>";
-				        while($row = mysqli_fetch_array($result)){
-				            echo "<tr>";
-				                echo "<td class='text-center' style='width: 16px'>
-								<div class='form-check'>
-									  <label class='form-check-label'>
-										<input class='form-check-input' type='checkbox' id='blankCheckbox' value='option1' aria-label='...'>
-									  </label>
-								</td>";
-				                echo "<td class='text-center'>" . $row['email_date'] . "</td>";
-				                echo "<td class='text-center'>" . $row['email_from'] . "</td>";
-				                echo "<td>" . $row['email_subject'] . "</td>";
-				                echo "<td class='text-center'>" . $row['email_priority'] . "</td>";
-								
-								if($row['email_status'] == 1){
-									echo "<td class='text-center'>Read</td>";
-								}
-								else{
-									echo "<td class='text-center'>Unread</td>";									
-								}
-				                
-								echo "<td class='text-center'><a href=#".$row['email_id'].">Open</a></td>";
-				            echo "</tr>";
-				        }
-				        echo "</table>";
-				        // Free result set
-				        mysqli_free_result($result);
-				    } else{
-				        echo "No mail were found.";
-				    }
-				} else{
-				    echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
-				}
+					<?php
+					
+					// Attempt select query execution
+					$sql = "SELECT * FROM inbox";
+					
+					// Push out data
+					if($result = mysqli_query($mysqli, $sql)){
+						if(mysqli_num_rows($result) > 0){
+							echo "<table id='table_search' class='table table-bordered'>";
+								echo "<tr>";
+									echo "<th class='text-center'></th>";
+									echo "<th class='text-center' onclick='sortTable(1)'>Date</th>";
+									echo "<th class='text-center' onclick='sortTable(2)'>From</th>";
+									echo "<th class='text-center' onclick='sortTable(3)'>Subject</th>";
+									echo "<th class='text-center' onclick='sortTable(4)'>Priority</th>";
+									echo "<th class='text-center'>Status</th>";
+									echo "<th class='text-center'>Open</th>";
+								echo "</tr>";
+							while($row = mysqli_fetch_array($result)){
+								echo "<tr>";
+									echo "<td class='text-center' style='width: 16px'>
+									<div class='form-check'>
+										  <label class='form-check-label'>
+											<input class='form-check-input' type='checkbox' id='blankCheckbox' value='option1' aria-label='...'>
+										  </label>
+									</td>";
+									echo "<td class='text-center'>" . $row['email_date'] . "</td>";
+									echo "<td class='text-center'>" . $row['email_from'] . "</td>";
+									echo "<td>" . $row['email_subject'] . "</td>";
+									echo "<td class='text-center'>" . $row['email_priority'] . "</td>";
+									
+									// Email Read/Unread indicator
+									if($row['email_status'] == 1){
+										echo "<td class='text-center'><img src='../img/read.png' alt='Read' width='32' height='32'></td>";
+									}
+									else{
+										echo "<td class='text-center'><img src='../img/unread.png' alt='Read' width='32' height='32'></td>";									
+									}
+									
+									// Open email
+									echo "<td class='text-center'><a href=#".$row['email_id'].">Open</a></td>";
+								echo "</tr>";
+							}
+							echo "</table>";
+							// Free result set
+							mysqli_free_result($result);
+						} else{
+							echo "No mail were found.";
+						}
+					} else{
+						echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
+					}
 
-				// Close connection
-				mysqli_close($mysqli);
-				?>
+					// Close connection
+					mysqli_close($mysqli);
+					?>
 				<nav aria-label="...">
 				  <ul class="pagination">
 					<li class="page-item disabled">

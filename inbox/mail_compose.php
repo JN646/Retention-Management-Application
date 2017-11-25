@@ -5,7 +5,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/reten/config/DBconfig.php");
 // Load Header
 include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
 
-// Initialize the session
+// Initialise the session
 session_start();
  
 // If session variable is not set it will redirect to login page
@@ -20,20 +20,23 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 <div class="container-fluid">
 	<div class="col-md-12">
 		<div class="row">
-			<?php include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/nav.php"); ?>			<div class="col-md-11">
+			<?php include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/nav.php"); ?>
+			<div class="col-md-11">
 				<h1 class="display-4">Compose Mail</h1>
-				<form>
+				<form action="functions/mail_add.php" method="post">
 					<div class="form-group">
-						<label for="formGroupExampleInput">To:</label> <input class="form-control" id="formGroupExampleInput" placeholder="Recipients" type="text">
+						<label for="email_recipient">To:</label>
+						<input class="form-control" name="email_recipient" id="email_recipient" placeholder="Recipients" type="text">
 					</div>
 					<div class="form-group">
-						<label for="formGroupExampleInput2">Subject:</label> <input class="form-control" id="formGroupExampleInput2" placeholder="Subject" type="text">
+						<label for="email_subject">Subject:</label>
+						<input class="form-control" name="email_subject" id="email_subject" placeholder="Subject" type="text">
 					</div>
 					<div class="form-group">
-						<label for="formGroupExampleInput2">Content:</label> 
-						<textarea class="form-control" id="exampleTextarea" rows="10"></textarea>
+						<label for="email_content">Content:</label> 
+						<textarea class="form-control" name="email_content" id="email_content" rows="10"></textarea>
 					</div>
-					<button class="btn btn-primary" type="submit">Send</button>
+					<button class="btn btn-primary" value="Submit" name="mail" type="submit">Send</button>
 				</form>
 			</div>
 		</div>

@@ -25,13 +25,16 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 				<h1 class="display-4">Compose Todo</h1>
 				<form action="functions/todo_add.php" method="post">
 					<div class="form-group">
-						<label for="todo_recipient">To:</label> <input class="form-control" name="todo_recipient" id="todo_recipient" placeholder="Recipients" type="text">
+						<label for="todo_recipient">To:</label>
+						<input class="form-control" name="todo_recipient" id="todo_recipient" placeholder="Recipients" type="text">
 					</div>
 					<div class="form-group">
-						<label for="todo_job">Job:</label> <input class="form-control" name="todo_job" id="todo_job" placeholder="Job" type="text">
+						<label for="todo_job">Job:</label>
+						<input class="form-control" name="todo_job" id="todo_job" placeholder="Job" type="text">
 					</div>
 					<div class="form-group">
-						<label for="todo_priority">Priority:</label> <input class="form-control" name="todo_priority" id="todo_priority" placeholder="Priority" type="text">
+						<label for="todo_priority">Priority:</label>
+						<input class="form-control" name="todo_priority" id="todo_priority" placeholder="Priority" type="text">
 					</div>
 					<button class="btn btn-primary" name="todo" value="Submit" type="submit">Send</button>
 				</form>
