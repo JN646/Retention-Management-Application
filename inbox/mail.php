@@ -28,7 +28,7 @@ include("../partials/header.php");
 									<a class="nav-link" href="#">Mark Unread</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link btn-outline-success" href="#">Compose</a>
+									<a class="nav-link btn-outline-success" href="mail_compose.php">Compose</a>
 								</li>
 								<li class="nav-item">
 									<a class="nav-link btn-outline-danger" href="#">Delete</a>
