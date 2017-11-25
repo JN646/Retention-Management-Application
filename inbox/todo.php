@@ -55,7 +55,7 @@ include("../partials/header.php");
 				                echo "<td class='text-center'>" . $row['todo_from'] . "</td>";
 				                echo "<td>" . $row['todo_job'] . "</td>";
 				                echo "<td class='text-center'>" . $row['todo_priority'] . "</td>";
-				                echo "<td class='text-center'><a href=#".$row['todo_id'].">Complete</a></td>";
+				                echo "<td class='text-center'><a href=#".$row['todo_id']."><img src='../img/check.png' alt='Check' width='32' height='32'></a></td>";
 				            echo "</tr>";
 				        }
 				        echo "</table>";
