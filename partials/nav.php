@@ -24,7 +24,8 @@
 	<h5>User</h5>
 	<ul class="nav flex-column">
 		<li class="nav-item">
-			<a class="nav-link" href="http://localhost/reten/dashboard/dashboard.php">Profile</a>
+			<a class="nav-link" href="http://localhost/reten/dashboard/dashboard.php">Dash</a>
+			<a class="nav-link" href="#">Rota</a>
 		</li>
 	</ul>
 </div>
