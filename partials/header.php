@@ -6,8 +6,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
  </head>
+<?php include($_SERVER["DOCUMENT_ROOT"] . "/reten/config/DBVar.php"); ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="http://localhost/reten/index.php">RMS</a>
+  <a class="navbar-brand" href="<?php echo $environment; ?>index.php">RMS</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -27,8 +28,8 @@
           User
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="http://localhost/reten/admin/profile.php">Profile</a>
-          <a class="dropdown-item" href="http://localhost/reten/admin/logout.php">Logout</a>
+          <a class="dropdown-item" href="<?php echo $environment; ?>admin/profile.php">Profile</a>
+          <a class="dropdown-item" href="<?php echo $environment; ?>admin/logout.php">Logout</a>
         </div>
       </li>
     </ul>

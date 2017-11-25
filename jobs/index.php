@@ -21,7 +21,7 @@ include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
 						<h5>Tools</h5>
 						<ul class="nav">
 							<li class="nav-item">
-								<a class="nav-link" href="../contacts/add_contact.php">Add Job</a>
+								<a class="nav-link" href="<?php echo $environment; ?>contacts/add_contact.php">Add Job</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="#">Refresh</a>

@@ -1,4 +1,4 @@
-<?php include("partials/header.php"); ?>
+<?php include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php"); ?>
 </head>
 	<title>RMS Home</title>
 </head>
