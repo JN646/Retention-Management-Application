@@ -11,8 +11,7 @@ include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
 <div class="container-fluid">
 	<div class="col-md-12">
 		<div class="row">
-			<?php include("../partials/nav.php"); ?>
-			<div class="col-md-11">
+			<?php include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/nav.php"); ?>			<div class="col-md-11">
 				<h1 class="display-4">Compose Mail</h1>
 				<form>
 					<div class="form-group">
@@ -30,6 +29,7 @@ include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
 			</div>
 		</div>
 	</div>
-</div><?php include("../partials/footer.php"); ?>
+</div>
+<?php include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/footer.php"); ?>
 </body>
 </html>

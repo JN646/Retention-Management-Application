@@ -13,7 +13,7 @@ include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
 <div class="container-fluid">
 	<div class="col-md-12">
 		<div class="row">
-			<?php include("../partials/nav.php"); ?>
+			<?php include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/nav.php"); ?>
 			<div class="col-md-11">
 				<h1 class="display-4">Jobs</h1>
 				<div class="row">
@@ -115,4 +115,4 @@ include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
 		</div>
 	</div>
 </div>
-<?php include("../partials/footer.php"); ?>
+<?php include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/footer.php"); ?>
