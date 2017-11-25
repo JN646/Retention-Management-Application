@@ -23,7 +23,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 			<div class="row">
 				<?php include("../partials/nav.php"); ?>
 				<div class="col-md-11">
-					<h1 class="display-4">Dashboard</h1>
+					<h1 class="display-4">Hi, <b><?php echo $_SESSION['username']; ?></b>. Welcome to your Dashboard.</h1>
 						<div class="alert alert-danger" role="alert">
 							Feature not implemented yet.
 						</div>
