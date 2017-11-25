@@ -11,7 +11,7 @@
 					<div class="row">
 						<div class="col-md-9">
 							<h1 class="display-2">Retention Management System</h1>
-							<h1 class="lead">Nothing Works. Sorry. Not Sorry.</h1>
+							<h1 class="lead">Nothing Still Works. Sorry. Not Sorry.</h1>
 						</div>
 						<div class="col-md-3">
 							<form>
