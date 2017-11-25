@@ -95,9 +95,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">
             </div>
-            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
         </form>
     </div>   
-<?php include("../partials/footer.php"); ?>	
-</body>
+<?php include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/footer.php"); ?></body>
 </html>
