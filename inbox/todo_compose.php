@@ -6,24 +6,23 @@ require_once '../config/DBconfig.php';
 include("../partials/header.php");
 ?>
 <head>
-	<title>Compose Mail</title>
+	<title>Compose Todo</title>
 </head>
 <div class="container-fluid">
 	<div class="col-md-12">
 		<div class="row">
 			<?php include("../partials/nav.php"); ?>
 			<div class="col-md-11">
-				<h1 class="display-4">Compose Mail</h1>
+				<h1 class="display-4">Compose Todo</h1>
 				<form>
 					<div class="form-group">
 						<label for="formGroupExampleInput">To:</label> <input class="form-control" id="formGroupExampleInput" placeholder="Recipients" type="text">
 					</div>
 					<div class="form-group">
-						<label for="formGroupExampleInput2">Subject:</label> <input class="form-control" id="formGroupExampleInput2" placeholder="Subject" type="text">
+						<label for="formGroupExampleInput2">Job:</label> <input class="form-control" id="formGroupExampleInput2" placeholder="Job" type="text">
 					</div>
 					<div class="form-group">
-						<label for="formGroupExampleInput2">Content:</label> 
-						<textarea class="form-control" id="exampleTextarea" rows="10"></textarea>
+						<label for="formGroupExampleInput2">Priority:</label> <input class="form-control" id="formGroupExampleInput2" placeholder="Priority" type="text">
 					</div>
 					<button class="btn btn-primary" type="submit">Send</button>
 				</form>
