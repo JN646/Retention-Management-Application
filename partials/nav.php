@@ -28,4 +28,12 @@
 			<a class="nav-link" href="#">Rota</a>
 		</li>
 	</ul>
+	<hr>
+	<h5>Admin</h5>
+	<ul class="nav flex-column">
+		<li class="nav-item">
+			<a class="nav-link" href="http://localhost/reten/admin/users.php">Users</a>
+			<a class="nav-link" href="http://localhost/reten/admin/clients.php">Clients</a>
+		</li>
+	</ul>
 </div>
