@@ -21,7 +21,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
     <div class="container-fluid">
 		<div class="col-md-12">
 			<div class="row">
-				<?php include("../partials/nav.php"); ?>
+				<?php include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/nav.php"); ?>
 				<div class="col-md-11">
 					<h1 class="display-4">Profile</h1>
 						<div class="alert alert-danger" role="alert">

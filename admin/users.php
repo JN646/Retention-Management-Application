@@ -5,7 +5,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/reten/config/DBconfig.php");
 // Load Header
 include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
 
-// Initialize the session
+// Initialise the session
 session_start();
  
 // If session variable is not set it will redirect to login page
@@ -49,11 +49,14 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 							echo "<table id='table_search' class='table table-bordered'>";
 								echo "<tr>";
 									echo "<th class='text-center'></th>";
-									echo "<th class='text-center' onclick='sortTable(1)'>ID</th>";
-									echo "<th class='text-center' onclick='sortTable(2)'>Username</th>";
-									echo "<th class='text-center' onclick='sortTable(3)'>Password</th>";
-									echo "<th class='text-center' onclick='sortTable(4)'>Created At</th>";
-									echo "<th class='text-center' onclick='sortTable(5)'>Admin?</th>";
+									echo "<th class='text-center' onclick='sortTable(1)'>Username</th>";
+									echo "<th class='text-center' onclick='sortTable(2)'>Password (DEBUG)</th>";
+									echo "<th class='text-center' onclick='sortTable(3)'>Created At</th>";
+									echo "<th class='text-center' onclick='sortTable(4)'>Group</th>";
+									echo "<th class='text-center' onclick='sortTable(5)'>Calls Taken</th>";
+									echo "<th class='text-center' onclick='sortTable(6)'>Success Rate</th>";
+									echo "<th class='text-center' onclick='sortTable(7)'>Admin?</th>";
+									echo "<th class='text-center' onclick='sortTable(8)'>Edit</th>";
 								echo "</tr>";
 							while($row = mysqli_fetch_array($result)){
 								echo "<tr>";
@@ -63,11 +66,22 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 											<input class='form-check-input' type='checkbox' id='blankCheckbox' value='option1' aria-label='...'>
 										  </label>
 									</td>";
-									echo "<td class='text-center'>" . $row['id'] . "</td>";
 									echo "<td class='text-center'>" . $row['username'] . "</td>";
 									echo "<td>" . $row['password'] . "</td>";
 									echo "<td class='text-center'>" . $row['created_at'] . "</td>";
-									echo "<td class='text-center'>" . $row['is_admin'] . "</td>";
+									echo "<td class='text-center'>" . $row['call_group'] . "</td>";
+									echo "<td class='text-center'>" . $row['calls_taken'] . "</td>";
+									echo "<td class='text-center'>" . $row['success_rate'] . "</td>";
+																		
+									// Email Read/Unread indicator
+									if($row['is_admin'] == 1){
+										echo "<td class='text-center'><img src='../img/check.png' alt='Admin' width='32' height='32'></td>";
+									}
+									else{
+										echo "<td class='text-center'> </td>";
+									}
+									
+									echo "<td class='text-center'><a href=#".$row['id']."><img src='../img/edit.png' alt='Edit' width='32' height='32'></a></td>";
 								echo "</tr>";
 							}
 							echo "</table>";
@@ -83,24 +97,6 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 					// Close connection
 					mysqli_close($mysqli);
 					?>
-				<nav aria-label="...">
-				  <ul class="pagination">
-					<li class="page-item disabled">
-					  <span class="page-link">Previous</span>
-					</li>
-					<li class="page-item"><a class="page-link" href="#">1</a></li>
-					<li class="page-item active">
-					  <span class="page-link">
-						2
-						<span class="sr-only">(current)</span>
-					  </span>
-					</li>
-					<li class="page-item"><a class="page-link" href="#">3</a></li>
-					<li class="page-item">
-					  <a class="page-link" href="#">Next</a>
-					</li>
-				  </ul>
-				</nav>
 				</div>
 			</div>
 		</div>
