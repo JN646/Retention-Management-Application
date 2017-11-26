@@ -23,9 +23,9 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 			<div class="row">
 				<?php include("../partials/nav.php"); ?>
 				<div class="col-md-11">
-					<h1 class="display-4">Inbox</h1>
-						<div class="alert alert-warning" role="alert">
-							Feature partially implemented.
+					<h1 class="display-4">Client Management</h1>
+						<div class="alert alert-danger" role="alert">
+							Feature not implemented.
 						</div>
 						<div class="col-md-9">
 							<h5>Tools</h5>
