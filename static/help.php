@@ -1,4 +1,7 @@
 <?php include("../partials/header.php"); ?>
+<head>
+	<title>Help</title>
+</head>
 <div class="container-fluid">
 	<div class="col-md-12">
 		<div class="row">
