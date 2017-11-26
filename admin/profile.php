@@ -54,33 +54,39 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 						<h2>Contact Information</h2>
 						<p>Please ensure that this information is kepy updated at all times. These details will be used to contact you out of work time.</p>
 					<form action="" method="post">
-						<div class="form-group">
-							<label>Home Phone:<sup>*</sup></label>
-							<input type="text" name="Real Name" class="form-control" value="">
+						<div class="form-group row">
+							<div class="col-md-6">
+								<label>Home Phone:<sup>*</sup></label>
+								<input type="text" name="Real Name" class="form-control" value="">
+							</div>
+							<div class="col-md-6">
+								<label>Mobile:<sup>*</sup></label>
+								<input type="text" name="Real Name" class="form-control" value="">
+							</div>
 						</div>
-						<div class="form-group">
-							<label>Mobile:<sup>*</sup></label>
-							<input type="text" name="Real Name" class="form-control" value="">
+						<div class="form-group row">
+							<div class="col-md-4">	
+								<label>Address 1:<sup>*</sup></label>
+								<input type="text" name="Real Name" class="form-control" value="">
+							</div>
+							<div class="col-md-4">	
+								<label>Address 2:<sup>*</sup></label>
+								<input type="text" name="Real Name" class="form-control" value="">
+							</div>
+							<div class="col-md-4">	
+								<label>Address 3:<sup>*</sup></label>
+								<input type="text" name="Real Name" class="form-control" value="">
+							</div>
 						</div>
-						<div class="form-group">
-							<label>Address 1:<sup>*</sup></label>
-							<input type="text" name="Real Name" class="form-control" value="">
-						</div>
-						<div class="form-group">
-							<label>Address 2:<sup>*</sup></label>
-							<input type="text" name="Real Name" class="form-control" value="">
-						</div>
-						<div class="form-group">
-							<label>Address 3:<sup>*</sup></label>
-							<input type="text" name="Real Name" class="form-control" value="">
-						</div>
-						<div class="form-group">
-							<label>Postcode:<sup>*</sup></label>
-							<input type="text" name="Real Name" class="form-control" value="">
-						</div>
-						<div class="form-group">
-							<label>County:<sup>*</sup></label>
-							<input type="text" name="Real Name" class="form-control" value="">
+						<div class="form-group row">
+							<div class="col-md-6">
+								<label>Postcode:<sup>*</sup></label>
+								<input type="text" name="Real Name" class="form-control" value="">
+							</div>
+							<div class="col-md-6">
+								<label>County:<sup>*</sup></label>
+								<input type="text" name="Real Name" class="form-control" value="">
+							</div>
 						</div>
 						<div class="form-group">
 							<input type="submit" class="btn btn-primary" value="Update">
