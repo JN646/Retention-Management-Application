@@ -31,10 +31,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 							<h5>Tools</h5>
 							<ul class="nav">
 								<li class="nav-item">
-									<a class="nav-link" href="#">Read/Unread</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link btn-outline-success" href="mail_compose.php">Compose</a>
+									<a class="nav-link btn-outline-success" href="#">Add</a>
 								</li>
 								<li class="nav-item">
 									<a class="nav-link btn-outline-danger" href="#">Delete</a>
@@ -51,22 +48,15 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 						if(mysqli_num_rows($result) > 0){
 							echo "<table id='table_search' class='table table-bordered'>";
 								echo "<tr>";
-									echo "<th class='text-center'></th>";
-									echo "<th class='text-center' onclick='sortTable(1)'>Date</th>";
-									echo "<th class='text-center' onclick='sortTable(2)'>From</th>";
-									echo "<th class='text-center' onclick='sortTable(3)'>Subject</th>";
-									echo "<th class='text-center' onclick='sortTable(4)'>Priority</th>";
+									echo "<th class='text-center' onclick='sortTable(1)'>Provider</th>";
+									echo "<th class='text-center' onclick='sortTable(2)'>Col 2</th>";
+									echo "<th class='text-center' onclick='sortTable(3)'>Col 3</th>";
+									echo "<th class='text-center' onclick='sortTable(4)'>Col 4</th>";
 									echo "<th class='text-center'>Status</th>";
-									echo "<th class='text-center'>Open</th>";
+									echo "<th class='text-center'>View</th>";
 								echo "</tr>";
 							while($row = mysqli_fetch_array($result)){
 								echo "<tr>";
-									echo "<td class='text-center' style='width: 16px'>
-									<div class='form-check'>
-										  <label class='form-check-label'>
-											<input class='form-check-input' type='checkbox' id='blankCheckbox' value='option1' aria-label='...'>
-										  </label>
-									</td>";
 									echo "<td class='text-center'>" . $row['email_date'] . "</td>";
 									echo "<td class='text-center'>" . $row['email_from'] . "</td>";
 									echo "<td>" . $row['email_subject'] . "</td>";
@@ -81,7 +71,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 									}
 									
 									// Open email
-									echo "<td class='text-center'><a href=#".$row['email_id'].">Open</a></td>";
+									echo "<td class='text-center'><a href=#".$row['email_id'].">View</a></td>";
 								echo "</tr>";
 							}
 							echo "</table>";
@@ -97,24 +87,6 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 					// Close connection
 					mysqli_close($mysqli);
 					?>
-				<nav aria-label="...">
-				  <ul class="pagination">
-					<li class="page-item disabled">
-					  <span class="page-link">Previous</span>
-					</li>
-					<li class="page-item"><a class="page-link" href="#">1</a></li>
-					<li class="page-item active">
-					  <span class="page-link">
-						2
-						<span class="sr-only">(current)</span>
-					  </span>
-					</li>
-					<li class="page-item"><a class="page-link" href="#">3</a></li>
-					<li class="page-item">
-					  <a class="page-link" href="#">Next</a>
-					</li>
-				  </ul>
-				</nav>
 				</div>
 			</div>
 		</div>

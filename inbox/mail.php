@@ -61,6 +61,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 								echo "</tr>";
 							while($row = mysqli_fetch_array($result)){
 								echo "<tr>";
+									// Add empty checkbox
 									echo "<td class='text-center' style='width: 16px'>
 									<div class='form-check'>
 										  <label class='form-check-label'>
