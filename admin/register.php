@@ -12,6 +12,7 @@ session_start();
 if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
   header("location: login.php");
   exit;
+}
 
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
