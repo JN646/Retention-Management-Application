@@ -33,6 +33,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 									<div class="card-body">
 										<h1 class="card-title text-center display-4">Success Rate</h1>
 										<h1 class="text-center">85%</h1>
+										<p class="text-center"><a href="#">More Info</a></p>
 									</div>
 								</div>
 							</div>
@@ -41,6 +42,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 									<div class="card-body">
 										<h1 class="card-title text-center display-4">Assigned</h1>
 										<h1 class="text-center">RED</h1>
+										<p class="text-center"><a href="#">More Info</a></p>
 									</div>
 								</div>
 							</div>
@@ -49,6 +51,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 									<div class="card-body">
 										<h1 class="card-title text-center display-4">EXP</h1>
 										<h1 class="text-center">0</h1>
+										<p class="text-center"><a href="#">More Info</a></p>
 									</div>
 								</div>
 							</div>
@@ -60,6 +63,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 									<div class="card-body">
 										<h1 class="card-title text-center display-4">Calls Taken</h1>
 										<h1 class="text-center">85%</h1>
+										<p class="text-center"><a href="#">More Info</a></p>
 									</div>
 								</div>
 							</div>
@@ -67,7 +71,8 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 								<div class="col-md-12 card">
 									<div class="card-body">
 										<h1 class="card-title text-center display-4">Link</h1>
-										<h1 class="text-center">RED</h1>
+										<h1 class="text-center">-</h1>
+										<p class="text-center"><a href="#">More Info</a></p>
 									</div>
 								</div>
 							</div>
@@ -75,7 +80,8 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 								<div class="col-md-12 card">
 									<div class="card-body">
 										<h1 class="card-title text-center display-4">Link</h1>
-										<h1 class="text-center">0</h1>
+										<h1 class="text-center">-</h1>
+										<p class="text-center"><a href="#">More Info</a></p>
 									</div>
 								</div>
 							</div>

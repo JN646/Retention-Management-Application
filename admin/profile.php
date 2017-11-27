@@ -96,6 +96,6 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 			</div>
 		</div>
     </div>
-<?php include("../partials/footer.php"); ?>
+<?php include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/footer.php"); ?>
 </body>
 </html>
