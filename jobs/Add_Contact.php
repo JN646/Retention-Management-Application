@@ -66,7 +66,7 @@ include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
 					</div>
 					<div class="form-group">
 						<label for="notes">Notes</label> 
-						<textarea class="form-control" id="notes" rows="5"></textarea>
+						<textarea class="form-control" id="notes" rows="10"></textarea>
 					</div><button class="btn btn-primary" type="submit">Submit</button>
 				</form>
 			</div>

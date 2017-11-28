@@ -82,7 +82,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 									}
 									
 									// Open email
-									echo "<td class='text-center'><a href=#".$row['email_id'].">Open</a></td>";
+									echo "<td class='text-center'><a href=mail_view.php"./* $row['email_id']. */">Open</a></td>";
 								echo "</tr>";
 							}
 							echo "</table>";
@@ -98,24 +98,6 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 					// Close connection
 					mysqli_close($mysqli);
 					?>
-				<nav aria-label="...">
-				  <ul class="pagination">
-					<li class="page-item disabled">
-					  <span class="page-link">Previous</span>
-					</li>
-					<li class="page-item"><a class="page-link" href="#">1</a></li>
-					<li class="page-item active">
-					  <span class="page-link">
-						2
-						<span class="sr-only">(current)</span>
-					  </span>
-					</li>
-					<li class="page-item"><a class="page-link" href="#">3</a></li>
-					<li class="page-item">
-					  <a class="page-link" href="#">Next</a>
-					</li>
-				  </ul>
-				</nav>
 				</div>
 			</div>
 		</div>
