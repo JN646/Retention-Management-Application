@@ -6,7 +6,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/reten/config/DBconfig.php");
 include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
 ?>
 </head>
-	<title>Add Contact</title>
+	<title>Add Job</title>
 </head>
 <div class="container-fluid">
 	<div class="col-md-12">
@@ -14,7 +14,10 @@ include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
 			<?php include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/nav.php"); ?>
 			<div class="col-md-11">
 				<h1>Add New Job</h1>
-				<p>Add a new job to the waiting list.</p>
+				<p>Add a new job to the waiting list. Ensure that all data entered below is correct. Double check for accuracy.</p>
+				<div class="alert alert-danger" role="alert">
+					Feature not implemented.
+				</div>
 				<form>
 					<div class="form-row">
 						<div class="col">
