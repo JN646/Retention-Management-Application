@@ -41,10 +41,24 @@ include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
 					<div class="form-group">
 						<label for="policynum">Policy Number</label> <input class="form-control" id="policynum" placeholder="Policy Number" type="text">
 					</div>
-					<div class="form-group">
-						<label for="policyworth">Policy Worth</label>
-						<div class="input-group">
-							<span class="input-group-addon">£</span> <input class="form-control" id="policyworth" placeholder="Policy Worth" type="text">
+					<div class="form-group row">
+						<div class="col-md-6">
+							<label for="policyworth">Policy Worth</label>
+							<div class="input-group">
+								<span class="input-group-addon">£</span> <input class="form-control" id="policyworth" placeholder="Policy Worth" type="text">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<label for="policyworth">Policy Group</label>
+							<div class="input-group">
+							  <select class="custom-select" id="inlineFormCustomSelect">
+								<option selected>Choose...</option>
+								<option value="RED">Red</option>
+								<option value="GREEN">Green</option>
+								<option value="YELLOW">Yellow</option>
+								<option value="PURPLLE">Purple</option>
+							  </select>
+							</div>
 						</div>
 					</div>
 					<div class="form-group">
