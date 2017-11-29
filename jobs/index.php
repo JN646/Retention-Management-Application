@@ -17,8 +17,6 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
  <head>
 	<!--<META HTTP-EQUIV="refresh" CONTENT="5">-->
 	<title>Jobs</title>
-	<script src="../js/jquery.js"></script>
-	<script src="../js/jquery.slidereveal.min.js"></script>
  </head>
  <body>
 <div class="container-fluid">

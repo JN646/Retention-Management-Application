@@ -6,3 +6,26 @@
 	padding: 15px;
 	width: 300px;
 }
+
+.purple {
+	background-color: #e6ccff;
+	color: #e6ccff;
+    border-style: solid;
+	border-color: #000;
+    border-width: 2px;
+}
+
+.yellow {
+	background-color: #ffffcc;
+	color: #ffffcc;	
+}
+
+.green {
+	background-color: #d9ffcc;
+	color: #d9ffcc;
+}
+
+.red {
+	background-color: #ffcccc;
+	color: #ffcccc;
+}
