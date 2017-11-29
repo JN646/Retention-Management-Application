@@ -146,25 +146,32 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 						<li class="nav-item">[Provider], [Policy], [Number], [Worth], [CallType]</li>
 					</ul>
 				</div>
-				<script>
-					$("#slider").slideReveal({
-					trigger: $("#trigger"),
-					position: "right",
-					push: false,
+				<script type="text/javascript">
+					// Sliding sidebar.
+					$("#slider").slideReveal({	// Set div to slide.
+					trigger: $("#trigger"),		// Set item to act as trigger.
+					position: "right",			// Set positioning.
+					push: false,				// Disable content push.
 					});
 
+					// Search and filter data.
 					function myFunction() {
+						// declare variables.
 						var input, filter, ul, li, a, i;
-						input = document.getElementById("myInput");
+						
+						// set values to variables.
+						input = document.getElementById("myInput"); // search field ID.
 						filter = input.value.toUpperCase();
-						ul = document.getElementById("table_search");
+						ul = document.getElementById("table_search"); // table ID.
 						li = ul.getElementsByTagName("li");
+						
+						// Search loop.
 						for (i = 0; i < li.length; i++) {
-							a = li[i].getElementsByTagName("a")[6];
+							a = li[i].getElementsByTagName("a")[6]; // set the column to search by.
 							if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
 								li[i].style.display = "";
 							} else {
-								li[i].style.display = "none";
+								li[i].style.display = "none"; // remove bullets.
 
 							}
 						}
