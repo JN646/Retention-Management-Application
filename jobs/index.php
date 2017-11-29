@@ -150,7 +150,8 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 				<script>
 					$("#slider").slideReveal({
 					trigger: $("#trigger"),
-					position: "right"
+					position: "right",
+					push: false,
 					});
 				
 					function myFunction() {
