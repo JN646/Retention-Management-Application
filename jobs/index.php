@@ -7,7 +7,7 @@ include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
 
 // Initialize the session
 session_start();
- 
+
 // If session variable is not set it will redirect to login page
 if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
   header("location: http://localhost/reten/admin/login.php");
@@ -76,41 +76,41 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 				            echo "<tr>";
 								// Colour coding groups.
 								if($row['client_group'] == 'GREEN'){
-									echo "<td class='text-center' style='background-color: #d9ffcc; color: #d9ffcc'; width: 5px></td>";									
+									echo "<td class='text-center' style='background-color: #d9ffcc; color: #d9ffcc'; width: 5px></td>";
 								}
 								// if red.
 								else if($row['client_group'] == 'RED'){
-									echo "<td class='text-center' style='background-color: #ffcccc; color: #ffcccc'; width: 5px></td>";											
+									echo "<td class='text-center' style='background-color: #ffcccc; color: #ffcccc'; width: 5px></td>";
 								}
 								// If yellow.
 								else if($row['client_group'] == 'YELLOW'){
-									echo "<td class='text-center' style='background-color: #ffffcc; color: #ffffcc'; width: 5px></td>";											
+									echo "<td class='text-center' style='background-color: #ffffcc; color: #ffffcc'; width: 5px></td>";
 								}
 								// If purple.
 								else if($row['client_group'] == 'PURPLE'){
-									echo "<td class='text-center' style='background-color: #e6ccff; color: #e6ccff'; width: 5px></td>";											
+									echo "<td class='text-center' style='background-color: #e6ccff; color: #e6ccff'; width: 5px></td>";
 								}
 								// Combined first and last name fields.
 				                echo "<td>" . $row['client_fname'] . " " . $row['client_lname'] . "</td>";
-								
+
 								// Client age.
 				                echo "<td class='text-center'>" . $row['client_age'] . "</td>";
-								
+
 								// Client provider.
 				                echo "<td>" . $row['client_provider'] . "</td>";
-								
+
 								// Client policy number.
 				                echo "<td>" . $row['client_policynum'] . "</td>";
-								
+
 								// Client policy worth.
 				                echo "<td class='text-center'><p>£" . $row['client_policyworth'] . "</p></td>";
-								
+
 								// Client notes.
 				                echo "<td class='text-center'><a href=#".$row['client_id']." data-toggle='modal' data-target='#exampleModal'><img src='../img/writing.png' alt='Notes' width='32' height='32'></a></td>";
-								
+
 								// Client profile.
 				                echo "<td class='text-center'><a href=#".$row['client_id']."><img src='../img/profile.png' alt='Profile' width='32' height='32'></a></td>";
-								
+
 								// Client process.
 				                echo "<td class='text-center'><a href=#".$row['client_id']."><img src='../img/flag.png' alt='Process' width='32' height='32'></a></td>";
 				            echo "</tr>";
@@ -124,7 +124,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 				} else{
 				    echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
 				}
-				
+
 				// Close connection
 				mysqli_close($mysqli);
 				?>
@@ -146,14 +146,13 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 						<li class="nav-item">[Provider], [Policy], [Number], [Worth], [CallType]</li>
 					</ul>
 				</div>
-				
 				<script>
 					$("#slider").slideReveal({
 					trigger: $("#trigger"),
 					position: "right",
 					push: false,
 					});
-				
+
 					function myFunction() {
 						var input, filter, ul, li, a, i;
 						input = document.getElementById("myInput");
