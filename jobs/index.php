@@ -63,14 +63,17 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 				        echo "<table id='table_search' class='table table-bordered'>";
 				            echo "<tr>";
 				                echo "<th class='text-center' style='width: 5px'></th>";
+				                echo "<th width='16' class='text-center'>Full</th>";
 				                echo "<th class='text-center' onclick='sortTable(1)'>Name</th>";
 				                echo "<th class='text-center' onclick='sortTable(3)'>Age</th>";
-				                echo "<th class='text-center' onclick='sortTable(4)'>Policy Provider</th>";
-				                echo "<th class='text-center' onclick='sortTable(5)'>Policy Number</th>";
-				                echo "<th class='text-center' onclick='sortTable(6)'>Policy Worth</th>";
-				                echo "<th class='text-center' style='width: 32px'>Notes</th>";
-				                echo "<th class='text-center' style='width: 32px'>Full</th>";
-				                echo "<th class='text-center' style='width: 32px'>Process</th>";
+				                echo "<th class='text-center' onclick='sortTable(4)'>Address</th>";
+				                echo "<th class='text-center' onclick='sortTable(5)'>Phone</th>";
+				                echo "<th class='text-center' onclick='sortTable(6)'>Email</th>";
+				                echo "<th class='text-center' onclick='sortTable(7)'>Provider</th>";
+				                echo "<th class='text-center' onclick='sortTable(8)'>Policy #</th>";
+				                echo "<th class='text-center' onclick='sortTable(9)'>Worth</th>";
+				                echo "<th width='16' class='text-center'>Notes</th>";
+				                echo "<th width='16' class='text-center'>Process</th>";
 				            echo "</tr>";
 				        while($row = mysqli_fetch_array($result)){
 				            echo "<tr>";
@@ -90,11 +93,28 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 								else if($row['client_group'] == 'PURPLE'){
 									echo "<td class='text-center' style='background-color: #e6ccff; color: #e6ccff'; width: 5px></td>";
 								}
+								
+								// Client profile.
+				                echo "<td class='text-center'><a href=#".$row['client_id']."><img src='../img/profile.png' alt='Profile' width='24' height='24'></a></td>";
+								
 								// Combined first and last name fields.
-				                echo "<td>" . $row['client_fname'] . " " . $row['client_lname'] . "</td>";
+				                echo "<td>(Title) " . $row['client_fname'] . " " . $row['client_lname'] . "</td>";
 
 								// Client age.
+								// TODO Check NULL
 				                echo "<td class='text-center'>" . $row['client_age'] . "</td>";
+								
+								// Client address.
+								// TODO Check NULL
+				                echo "<td>34 Address Street, Town, County, XX000XX</td>";
+
+								// Client phone.
+								// TODO Check NULL
+				                echo "<td>07700000000</td>";
+								
+								// Client email.
+								// TODO Check NULL
+				                echo "<td>MyEmail@DomainName.co.uk</td>";
 
 								// Client provider.
 				                echo "<td>" . $row['client_provider'] . "</td>";
@@ -106,13 +126,10 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 				                echo "<td class='text-center'><p>£" . $row['client_policyworth'] . "</p></td>";
 
 								// Client notes.
-				                echo "<td class='text-center'><a href=#".$row['client_id']." data-toggle='modal' data-target='#exampleModal'><img src='../img/writing.png' alt='Notes' width='32' height='32'></a></td>";
-
-								// Client profile.
-				                echo "<td class='text-center'><a href=#".$row['client_id']."><img src='../img/profile.png' alt='Profile' width='32' height='32'></a></td>";
+				                echo "<td class='text-center'><a href=#".$row['client_id']." data-toggle='modal' data-target='#exampleModal'><img src='../img/writing.png' alt='Notes' width='24' height='24'></a></td>";
 
 								// Client process.
-				                echo "<td class='text-center'><a href=#".$row['client_id']."><img src='../img/flag.png' alt='Process' width='32' height='32'></a></td>";
+				                echo "<td class='text-center'><a href=#".$row['client_id']."><img src='../img/flag.png' alt='Process' width='24' height='24'></a></td>";
 				            echo "</tr>";
 				        }
 				        echo "</table>";
