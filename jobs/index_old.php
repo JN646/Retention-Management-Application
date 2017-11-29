@@ -15,10 +15,8 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 }
  ?>
  <head>
-	<!--<META HTTP-EQUIV="refresh" CONTENT="5">-->
-	<title>Jobs</title>
-	<script src="../js/jquery.js"></script>
-	<script src="../js/jquery.slidereveal.min.js"></script>
+	<META HTTP-EQUIV="refresh" CONTENT="5">
+	<title>Jobs List</title>
  </head>
  <body>
 <div class="container-fluid">
@@ -35,7 +33,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 								<a class="nav-link" href="<?php echo $environment; ?>jobs/add_contact.php">Add Job</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#" id='trigger'>Preview</a>
+								<a class="nav-link" href="#">Request Help</a>
 							</li>
 						</ul>
 					</div>
@@ -62,61 +60,52 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 				    if(mysqli_num_rows($result) > 0){
 				        echo "<table id='table_search' class='table table-bordered'>";
 				            echo "<tr>";
-				                echo "<th class='text-center' style='width: 5px'></th>";
-				                echo "<th class='text-center' onclick='sortTable(1)'>Name</th>";
+				                echo "<th class='text-center' onclick='sortTable(0)'>ID</th>";
+				                echo "<th class='text-center' onclick='sortTable(1)'>First Name</th>";
+				                echo "<th class='text-center' onclick='sortTable(2)'>Last Name</th>";
 				                echo "<th class='text-center' onclick='sortTable(3)'>Age</th>";
 				                echo "<th class='text-center' onclick='sortTable(4)'>Policy Provider</th>";
 				                echo "<th class='text-center' onclick='sortTable(5)'>Policy Number</th>";
-				                echo "<th class='text-center' onclick='sortTable(6)'>Policy Worth</th>";
+				                echo "<th class='text-center' onclick='sortTable(6)'>Group</th>";
+				                echo "<th class='text-center' onclick='sortTable(7)'>Policy Worth</th>";
 				                echo "<th class='text-center' style='width: 32px'>Notes</th>";
 				                echo "<th class='text-center' style='width: 32px'>Full</th>";
 				                echo "<th class='text-center' style='width: 32px'>Process</th>";
 				            echo "</tr>";
 				        while($row = mysqli_fetch_array($result)){
 				            echo "<tr>";
-								// Colour coding groups.
-								if($row['client_group'] == 'GREEN'){
-									echo "<td class='text-center' style='background-color: #d9ffcc; color: #d9ffcc'; width: 5px></td>";									
-								}
-								// if red.
-								else if($row['client_group'] == 'RED'){
-									echo "<td class='text-center' style='background-color: #ffcccc; color: #ffcccc'; width: 5px></td>";											
-								}
-								// If yellow.
-								else if($row['client_group'] == 'YELLOW'){
-									echo "<td class='text-center' style='background-color: #ffffcc; color: #ffffcc'; width: 5px></td>";											
-								}
-								// If purple.
-								else if($row['client_group'] == 'PURPLE'){
-									echo "<td class='text-center' style='background-color: #e6ccff; color: #e6ccff'; width: 5px></td>";											
-								}
-								// Combined first and last name fields.
-				                echo "<td>" . $row['client_fname'] . " " . $row['client_lname'] . "</td>";
-								
-								// Client age.
+				                echo "<td class='text-center'>" . $row['client_id'] . "</td>";
+				                echo "<td>" . $row['client_fname'] . "</td>";
+				                echo "<td>" . $row['client_lname'] . "</td>";
 				                echo "<td class='text-center'>" . $row['client_age'] . "</td>";
-								
-								// Client provider.
 				                echo "<td>" . $row['client_provider'] . "</td>";
-								
-								// Client policy number.
 				                echo "<td>" . $row['client_policynum'] . "</td>";
 								
-								// Client policy worth.
+								// Colour coding groups.
+								if($row['client_group'] == 'GREEN'){
+									echo "<td class='text-center' style='background-color: #d9ffcc; color: #d9ffcc'><p>" . $row['client_group'] . "</p></td>";									
+								}
+								else if($row['client_group'] == 'RED'){
+									echo "<td class='text-center' style='background-color: #ffcccc; color: #ffcccc'><p>" . $row['client_group'] . "</p></td>";											
+								}
+								else if($row['client_group'] == 'YELLOW'){
+									echo "<td class='text-center' style='background-color: #ffffcc; color: #ffffcc'><p>" . $row['client_group'] . "</p></td>";											
+								}
+								else if($row['client_group'] == 'PURPLE'){
+									echo "<td class='text-center' style='background-color: #e6ccff; color: #e6ccff'><p>" . $row['client_group'] . "</p></td>";											
+								}
+								else {
+									echo "<td class='text-center'><p>" . $row['client_group'] . "</p></td>";
+								}
+								
 				                echo "<td class='text-center'><p>£" . $row['client_policyworth'] . "</p></td>";
-								
-								// Client notes.
 				                echo "<td class='text-center'><a href=#".$row['client_id']." data-toggle='modal' data-target='#exampleModal'><img src='../img/writing.png' alt='Notes' width='32' height='32'></a></td>";
-								
-								// Client profile.
 				                echo "<td class='text-center'><a href=#".$row['client_id']."><img src='../img/profile.png' alt='Profile' width='32' height='32'></a></td>";
-								
-								// Client process.
 				                echo "<td class='text-center'><a href=#".$row['client_id']."><img src='../img/flag.png' alt='Process' width='32' height='32'></a></td>";
 				            echo "</tr>";
 				        }
 				        echo "</table>";
-				        // Free result set.
+				        // Free result set
 				        mysqli_free_result($result);
 				    } else{
 				        echo "No jobs were found.";
@@ -128,31 +117,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 				// Close connection
 				mysqli_close($mysqli);
 				?>
-				<div class='sidebar' id='slider'>
-					<h3>PREVIEW</h3>
-					<h5>Name</h5>
-					<ul class="nav flex-column">
-						<li class="nav-item">[Title], [FName] [LName]</li>
-					</ul>
-					<hr>
-					<h5>Contact</h5>
-					<ul class="nav flex-column">
-						<li class="nav-item">[Addr1], [Addr2], [Addr3], [County], [Postcode]</li>
-						<li class="nav-item">[Hom], [Mob], [Email]</li>
-					</ul>
-					<hr>
-					<h5>Policy</h5>
-					<ul class="nav flex-column">
-						<li class="nav-item">[Provider], [Policy], [Number], [Worth], [CallType]</li>
-					</ul>
-				</div>
-				
 				<script>
-					$("#slider").slideReveal({
-					trigger: $("#trigger"),
-					position: "right"
-					});
-				
 					function myFunction() {
 						var input, filter, ul, li, a, i;
 						input = document.getElementById("myInput");
@@ -170,8 +135,28 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 						}
 					}
 				</script>
+				
+				
+				<!-- Modal -->
+				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog" role="document">
+					<div class="modal-content">
+					  <div class="modal-header">
+						<h5 class="modal-title" id='exampleModalLabel'>Modal Title</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						  <span aria-hidden="true">&times;</span>
+						</button>
+					  </div>
+					  <div class="modal-body">
+						...
+					  </div>
+					  <div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					  </div>
+					</div>
+				  </div>
+				</div>
 			</div>
-			<?php //include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/preview.php"); ?>
 		</div>
 	</div>
 </div>
