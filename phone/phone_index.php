@@ -20,7 +20,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 			<?php include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/nav.php"); ?>
 			<div class="col-md-11">
 				<h1 class="display-4">Phone System</h1>
-				<div class="col-md-4 border border-primary">
+				<div class="col-md-4">
 					<h1>Needed Features</h1>
 					<ul>
 						<li>Auto logs.</li>
@@ -34,11 +34,11 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 				
 					//If user admin
 					if($user_admin == TRUE){
-						include($_SERVER["DOCUMENT_ROOT"] . "/reten/phone/phone_admin.php");
+						include($_SERVER["DOCUMENT_ROOT"] . "/reten/phone/partials/phone_admin.php");
 					}
 					else {
 					//If user not admin
-						include($_SERVER["DOCUMENT_ROOT"] . "/reten/phone/phone_user.php");			
+						include($_SERVER["DOCUMENT_ROOT"] . "/reten/phone/partials/phone_user.php");			
 					}
 				?>
 			</div>
