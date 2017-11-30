@@ -23,7 +23,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 			<?php include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/nav.php"); ?>
 			<div class="col-md-11">
 				<h1 class="display-4">Mail View</h1>
-				<?php>
+				<?php
 				// TODO get message data and display in the fields.
 				?>
 				<form action="#" method="post">
