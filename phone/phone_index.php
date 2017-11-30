@@ -14,9 +14,6 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
   exit;
 }
 ?>
-<head>
-	<title>Phone System</title>
-</head>
 <div class="container-fluid">
 	<div class="col-md-12">
 		<div class="row">

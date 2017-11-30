@@ -1,3 +1,6 @@
+<head>
+	<title>Phone System</title>
+</head>
 <h2>User is not Admin</h2>
 <hr>
 <div class="row">
