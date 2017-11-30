@@ -15,20 +15,35 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 }
 ?>
 <head>
-	<title>Phone View</title>
+	<title>Phone System</title>
 </head>
 <div class="container-fluid">
 	<div class="col-md-12">
 		<div class="row">
 			<?php include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/nav.php"); ?>
 			<div class="col-md-11">
-				<h1 class="display-4">Phone View</h1>
-				<h1>Needed Features</h1>
-				<ul>
-					<li>Auto logs.</li>
-					<li>Call timer.</li>
-					<li>Notify managers to why more time needed.</li>
-				</ul>
+				<h1 class="display-4">Phone System</h1>
+				<div class="col-md-4 border border-primary">
+					<h1>Needed Features</h1>
+					<ul>
+						<li>Auto logs.</li>
+						<li>Call timer.</li>
+						<li>Notify managers to why more time needed.</li>
+					</ul>
+				</div>
+				<?php
+					//debug
+					$user_admin = FALSE;
+				
+					//If user admin
+					if($user_admin == TRUE){
+						include($_SERVER["DOCUMENT_ROOT"] . "/reten/phone/phone_admin.php");
+					}
+					else {
+					//If user not admin
+						include($_SERVER["DOCUMENT_ROOT"] . "/reten/phone/phone_user.php");			
+					}
+				?>
 			</div>
 		</div>
 	</div>
