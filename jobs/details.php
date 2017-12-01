@@ -28,10 +28,13 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 				<div class="row">
 					<div class="col-md-9">
 						<h5>Policy Search</h5>
-						<div class="form-group">
-							<label for="srch">Search:</label>
-							<input type="text" class="form-control" id="srch">
-						</div>
+						<form class="form-inline">
+							<div class="form-group mx-sm-3">
+								<label for="search" class="sr-only">Search: </label>
+								<input type="password" class="form-control" id="search" placeholder="Search Policy Number">
+							</div>
+							<button type="submit" class="btn btn-primary">Search</button>
+						</form>
 					</div>
 				</div><br>
 				<div class="row">

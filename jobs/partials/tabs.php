@@ -13,10 +13,10 @@
 			<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 				<div class="col-md-12">
 					<br>
-					<h2>Home</h2>
+					<h1 class="display-4">Home</h1>
 					<div class="row">
 						<div class="col-md-4">
-							<div class="col-md-12 border">
+							<div class="col-md-12 border border-primary" style="height: 400px;">
 								<h3>Updates</h3>
 								<ul>
 									<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
@@ -26,7 +26,7 @@
 							</div>
 						</div>
 						<div class="col-md-4">
-							<div class="col-md-12 border">
+							<div class="col-md-12 border border-primary" style="height: 400px;">
 								<h3>Reactions</h3>
 								<ul>
 									<li>Nam non nibh et eros sodales porttitor.</li>
@@ -36,7 +36,7 @@
 							</div>
 						</div>
 						<div class="col-md-4">
-							<div class="col-md-12 border">
+							<div class="col-md-12 border border-primary" style="height: 400px;">
 								<h3>Todo</h3>
 								<input type="checkbox" name="vehicle" value="Bike"> Hello, my name is</input><br>
 								<input type="checkbox" name="vehicle" value="Bike"> Steve, and I</input><br>
@@ -50,37 +50,44 @@
 			<div class="tab-pane fade" id="nav-details" role="tabpanel" aria-labelledby="nav-details-tab">
 				<div class="col-md-12">
 					<br>
-					<h2>Details</h2>
+					<h1 class="display-4">Details</h1>
 					<h3>Contact</h3>
 					[title], [fname] [lname] [suffix] <br>
 					[addr1] [addr2] [addr3] <br>
 					[postcode] <br>
 					[home], [mob], [email] <br>
+					<br>
 					<button>Edit</button>
+					<?php
+					//edit.
+					?>	
 					<hr>
 					<h3>Policy</h3>
 					[policy #] <br>
 					[policy provider] <br>
 					[policy] <br>
 					[policy] <br>
-					<button>Edit</button>					
+					<br>
+					<button>Edit</button>
+					<?php
+					//edit.
+					?>					
 				</div>
 			</div>
 			<div class="tab-pane fade" id="nav-ncd" role="tabpanel" aria-labelledby="nav-ncd-tab">
 				<div class="col-md-12">
 					<br>
-					<h2>NCD</h2>
-					<ul>
-						<li>Link</li>
-						<li>Link</li>
-						<li>Link</li>
-					</ul>
+					<h1 class="display-4">NCD</h1>
+					<p>This client currently has <b>5 years</b> no claims discount.</p>
+					<hr>
+					<h2>Claim History</h2>
+					<p>No previous history.</p>
 				</div>
 			</div>
 			<div class="tab-pane fade" id="nav-quotes" role="tabpanel" aria-labelledby="nav-quotes-tab">
 				<div class="col-md-12">
 					<br>
-					<h2>Quotes</h2>
+					<h1 class="display-4">Quotes</h1>
 					<div class="row">
 						<div class="col-md-4">
 							<div class="col-md-12 border">
@@ -91,6 +98,9 @@
 									<li>[price]</li>
 								</ul>
 								<button>Purchase</a></button>
+								<?php
+								//Purchase script.
+								?>	
 							</div>
 						</div>
 						<div class="col-md-4">
@@ -102,6 +112,9 @@
 									<li>[price]</li>
 								</ul>
 								<button>Purchase</button>
+								<?php
+								//Purchase script.
+								?>
 							</div>
 						</div>
 						<div class="col-md-4">
@@ -113,6 +126,9 @@
 									<li>[price]</li>
 								</ul>
 								<button>Purchase</button>
+								<?php
+								//Purchase script.
+								?>
 							</div>
 						</div>
 					</div>
@@ -121,7 +137,7 @@
 			<div class="tab-pane fade" id="nav-bank" role="tabpanel" aria-labelledby="nav-bank-tab">
 				<div class="col-md-12">
 					<br>
-					<h2>Bank</h2>
+					<h1 class="display-4">Bank</h1>
 					<ul>
 						<li>Link</li>
 						<li>Link</li>
@@ -132,24 +148,30 @@
 			<div class="tab-pane fade" id="nav-notes" role="tabpanel" aria-labelledby="nav-notes-tab">
 				<div class="col-md-12">
 					<br>
-					<h2>Notes</h2>
+					<h1 class="display-4">Notes</h1>
 					<form>
 						<textarea rows="4" cols="50"></textarea>
 						<br>
 						<button>Update</button>
+						<?php
+						//update notes.
+						?>
 					</form>
 				</div>
 			</div>
 			<div class="tab-pane fade" id="nav-cancel" role="tabpanel" aria-labelledby="nav-cancel-tab">
 				<div class="col-md-12">
 					<br>
-					<h2>Cancel</h2>
+					<h1 class="display-4">Cancel</h1>
 					<p>Are you sure you wish to cancel the policy? This cannot be undone.</p>
 					<p>To cancel this policy, enter the policy number below.</p>
 					<form>
 						<input type="text"></input>
 						<button>Submit</button>
 					</form>
+					<?php
+					//compare policy numbers.
+					?>
 				</div>
 			</div>
 		</div>
