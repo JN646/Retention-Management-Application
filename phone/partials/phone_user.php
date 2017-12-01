@@ -8,9 +8,9 @@
 		<div class="col-md-12 border border-primary">
 			<h2>Recent Calls</h2>
 			<ul>
-				<li>Link</li>
-				<li>Link</li>
-				<li>Link</li>
+				<li>[Name] - [Number] - [00:12:02] <a href="#">Log</a></li>
+				<li>[Name] - [Number] - [00:08:36] <a href="#">Log</a></li>
+				<li>[Name] - [Number] - [00:04:21] <a href="#">Log</a></li>
 			</ul>
 		</div>
 	</div>
