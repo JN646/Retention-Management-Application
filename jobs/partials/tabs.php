@@ -97,7 +97,8 @@
 									<li>[type]</li>
 									<li>[price]</li>
 								</ul>
-								<button>Purchase</a></button>
+								<button class="form-control btn btn-success">Purchase</a></button>
+								<br>
 								<?php
 								//Purchase script.
 								?>	
@@ -111,7 +112,8 @@
 									<li>[type]</li>
 									<li>[price]</li>
 								</ul>
-								<button>Purchase</button>
+								<button class="form-control btn btn-success">Purchase</button>
+								<br>
 								<?php
 								//Purchase script.
 								?>
@@ -125,7 +127,8 @@
 									<li>[type]</li>
 									<li>[price]</li>
 								</ul>
-								<button>Purchase</button>
+								<button class="form-control btn btn-success">Purchase</button>
+								<br>
 								<?php
 								//Purchase script.
 								?>
@@ -150,9 +153,10 @@
 					<br>
 					<h1 class="display-4">Notes</h1>
 					<form>
-						<textarea rows="4" cols="50"></textarea>
+						<textarea class="form-control" rows="4" cols="50"></textarea>
 						<br>
-						<button>Update</button>
+						<button class="form-control btn btn-warning">Update</button>
+						<br>
 						<?php
 						//update notes.
 						?>
@@ -165,9 +169,11 @@
 					<h1 class="display-4">Cancel</h1>
 					<p>Are you sure you wish to cancel the policy? This cannot be undone.</p>
 					<p>To cancel this policy, enter the policy number below.</p>
-					<form>
-						<input type="text"></input>
-						<button>Submit</button>
+					<form class="form-group">
+						<input class="form-control" type="text"></input>
+					</form>
+					<form class="form-group">
+						<button class="form-control btn btn-danger">Submit</button>
 					</form>
 					<?php
 					//compare policy numbers.
