@@ -5,18 +5,16 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/reten/config/DBconfig.php");
 // Load Header
 include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
 
-// Initialize the session
+// Initialise the session
 session_start();
- 
+
 // If session variable is not set it will redirect to login page
 if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
   header("location: http://localhost/reten/admin/login.php");
   exit;
 }
 ?>
-<head>
-	<title>Mail</title>
-</head>
+<head><title>Mail</title></head>
 <body>
     <div class="container-fluid">
 		<div class="col-md-12">
@@ -24,28 +22,20 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 				<?php include("../partials/nav.php"); ?>
 				<div class="col-md-11">
 					<h1 class="display-4">Inbox</h1>
-						<div class="alert alert-warning" role="alert">
-							Feature partially implemented.
-						</div>
+						<div class="alert alert-warning" role="alert">Feature partially implemented.</div>
 						<div class="col-md-9">
 							<h5>Tools</h5>
 							<ul class="nav">
-								<li class="nav-item">
-									<a class="nav-link" href="#">Read/Unread</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link btn-outline-success" href="mail_compose.php">Compose</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link btn-outline-danger" href="#">Delete</a>
-								</li>
+								<li class="nav-item"><a class="nav-link" href="#">Read/Unread</a></li>
+								<li class="nav-item"><a class="nav-link btn-outline-success" href="mail_compose.php">Compose</a></li>
+								<li class="nav-item"><a class="nav-link btn-outline-danger" href="#">Delete</a></li>
 							</ul>
 						</div>
 					<?php
 					
 					// Attempt select query execution
 					$sql = "SELECT * FROM inbox";
-					
+
 					// Push out data
 					if($result = mysqli_query($mysqli, $sql)){
 						if(mysqli_num_rows($result) > 0){
@@ -72,15 +62,15 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 									echo "<td class='text-center'>" . $row['email_from'] . "</td>";
 									echo "<td>" . $row['email_subject'] . "</td>";
 									echo "<td class='text-center'>" . $row['email_priority'] . "</td>";
-									
+
 									// Email Read/Unread indicator
 									if($row['email_status'] == 1){
 										echo "<td class='text-center'><img src='../img/read.png' alt='Read' width='32' height='32'></td>";
 									}
 									else{
-										echo "<td class='text-center'><img src='../img/unread.png' alt='Read' width='32' height='32'></td>";									
+										echo "<td class='text-center'><img src='../img/unread.png' alt='Read' width='32' height='32'></td>";
 									}
-									
+
 									// Open email
 									echo "<td class='text-center'><a href=mail_view.php"./* $row['email_id']. */">Open</a></td>";
 								echo "</tr>";
@@ -101,7 +91,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 				</div>
 			</div>
 		</div>
-    </div>   
-<?php include("../partials/footer.php"); ?>	
+    </div>
+<?php include("../partials/footer.php"); ?>
 </body>
 </html>

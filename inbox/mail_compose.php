@@ -7,16 +7,14 @@ include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
 
 // Initialise the session
 session_start();
- 
+
 // If session variable is not set it will redirect to login page
 if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
   header("location: http://localhost/reten/admin/login.php");
   exit;
 }
 ?>
-<head>
-	<title>Compose Mail</title>
-</head>
+<head><title>Compose Mail</title></head>
 <div class="container-fluid">
 	<div class="col-md-12">
 		<div class="row">
@@ -33,7 +31,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 						<input class="form-control" name="email_subject" id="email_subject" placeholder="Subject" type="text">
 					</div>
 					<div class="form-group">
-						<label for="email_content">Content:</label> 
+						<label for="email_content">Content:</label>
 						<textarea class="form-control" name="email_content" id="email_content" rows="10"></textarea>
 					</div>
 					<button class="btn btn-primary" value="Submit" name="mail" type="submit">Send</button>
