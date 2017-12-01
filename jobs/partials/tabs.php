@@ -3,8 +3,28 @@
 		<nav class="nav nav-tabs col-md-12" id="myTab" role="tablist">
 			<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
 			<a class="nav-item nav-link" id="nav-details-tab" data-toggle="tab" href="#nav-details" role="tab" aria-controls="nav-details" aria-selected="true">Details</a>
-			<a class="nav-item nav-link" id="nav-ncd-tab" data-toggle="tab" href="#nav-ncd" role="tab" aria-controls="nav-ncd" aria-selected="false">NCD</a>
-			<a class="nav-item nav-link" id="nav-quotes-tab" data-toggle="tab" href="#nav-quotes" role="tab" aria-controls="nav-quotes" aria-selected="false">Quotes</a>
+
+			<?php
+			//debug.
+			$midterm = 0;
+
+			//check to see if midterm or renewal.
+			if($midterm == 0) {
+				//enable NCD menu.
+				echo"<a class='nav-item nav-link' id='nav-ncd-tab' data-toggle='tab' href='#nav-ncd' role='tab' aria-controls='nav-ncd' aria-selected='false'>NCD</a>";
+
+				//enable Quotes menu.
+				echo"<a class='nav-item nav-link' id='nav-quotes-tab' data-toggle='tab' href='#nav-quotes' role='tab' aria-controls='nav-quotes' aria-selected='false'>Quotes</a>";
+			}
+			else {
+				//disable NCD menu.
+				echo"<a class='nav-item nav-link disabled' id='nav-ncd-tab' data-toggle='tab' href='#nav-ncd' role='tab' aria-controls='nav-ncd' aria-selected='false'>NCD</a>";
+
+				//disable Quotes menu.
+				echo"<a class='nav-item nav-link disabled' id='nav-quotes-tab' data-toggle='tab' href='#nav-quotes' role='tab' aria-controls='nav-quotes' aria-selected='false'>Quotes</a>";
+			}
+			?>
+
 			<a class="nav-item nav-link" id="nav-bank-tab" data-toggle="tab" href="#nav-bank" role="tab" aria-controls="nav-bank" aria-selected="false">Bank</a>
 			<a class="nav-item nav-link" id="nav-notes-tab" data-toggle="tab" href="#nav-notes" role="tab" aria-controls="nav-notes" aria-selected="false">Notes</a>
 			<a class="nav-item nav-link" id="nav-cancel-tab" data-toggle="tab" href="#nav-cancel" role="tab" aria-controls="nav-cancel" aria-selected="false">Cancel</a>
@@ -16,7 +36,7 @@
 					<h1 class="display-4">Home</h1>
 					<div class="row">
 						<div class="col-md-4">
-							<div class="col-md-12 border border-primary" style="height: 400px;">
+							<div class="col-md-12 border border-primary detail-pane" style="height: 400px; padding: 10px;">
 								<h3>Updates</h3>
 								<ul>
 									<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
@@ -26,7 +46,7 @@
 							</div>
 						</div>
 						<div class="col-md-4">
-							<div class="col-md-12 border border-primary" style="height: 400px;">
+							<div class="col-md-12 border border-primary detail-pane" style="height: 400px; padding: 10px;">
 								<h3>Reactions</h3>
 								<ul>
 									<li>Nam non nibh et eros sodales porttitor.</li>
@@ -36,7 +56,7 @@
 							</div>
 						</div>
 						<div class="col-md-4">
-							<div class="col-md-12 border border-primary" style="height: 400px;">
+							<div class="col-md-12 border border-primary detail-pane" style="height: 400px; padding: 10px;">
 								<h3>Todo</h3>
 								<input type="checkbox" name="vehicle" value="Bike"> Hello, my name is</input><br>
 								<input type="checkbox" name="vehicle" value="Bike"> Steve, and I</input><br>
@@ -60,7 +80,7 @@
 					<button>Edit</button>
 					<?php
 					//edit.
-					?>	
+					?>
 					<hr>
 					<h3>Policy</h3>
 					[policy #] <br>
@@ -71,7 +91,7 @@
 					<button>Edit</button>
 					<?php
 					//edit.
-					?>					
+					?>
 				</div>
 			</div>
 			<div class="tab-pane fade" id="nav-ncd" role="tabpanel" aria-labelledby="nav-ncd-tab">
@@ -101,7 +121,7 @@
 								<br>
 								<?php
 								//Purchase script.
-								?>	
+								?>
 							</div>
 						</div>
 						<div class="col-md-4">

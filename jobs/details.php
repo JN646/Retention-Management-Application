@@ -38,7 +38,19 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 					</div>
 				</div><br>
 				<div class="row">
-					<?php include($_SERVER["DOCUMENT_ROOT"] . "/reten/jobs/partials/tabs.php"); ?>
+					<?php
+					//debug
+					$policynum = "1";
+
+					if(empty($policynum)) {
+						echo"<h3>Enter a Policy Number</h3>";
+						echo"<p>No records to show.</p>";
+					}
+					else {
+						//include details pane
+						include($_SERVER["DOCUMENT_ROOT"] . "/reten/jobs/partials/tabs.php");
+					}
+					?>
 				</div>
 			</div>
 			<?php //include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/preview.php"); ?>
