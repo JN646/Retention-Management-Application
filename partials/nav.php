@@ -5,6 +5,9 @@
 		<li class="nav-item">
 			<a class="nav-link" href="<?php echo $environment; ?>jobs/index.php">List</a>
 		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="<?php echo $environment; ?>jobs/details.php">Details</a>
+		</li>
 	</ul>
 	<h5>Inbox & Tasks</h5>
 	<ul class="nav flex-column">
