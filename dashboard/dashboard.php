@@ -33,14 +33,32 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 								</div>
 							</div>
 						</div>
+						<?php
+
+						?>
 						<div class="col-md-4">
 							<div class="col-md-12 card">
 								<div class="card-body">
-									<?php
-										//set specific colour codes.
-									?>
 									<h1 class="card-title text-center display-4">Assigned</h1>
-									<h1 class="text-center">RED</h1>
+									<?php
+										// Attempt select query execution
+										$sql = "SELECT * FROM users WHERE username='JN646'";
+										$result = mysqli_query($mysqli, $sql);
+										
+										if($result = mysqli_query($mysqli, $sql)){
+											if(mysqli_num_rows($result) > 0){
+												while($row = mysqli_fetch_array($result)){
+													echo "<h1 class='text-center'>" . $row['call_group'] . "</h1>";
+												}
+												// Close result set
+												mysqli_free_result($result);
+											} else{
+												echo "No records matching your query were found.";
+											}
+										} else{
+											echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+										}
+									?>
 									<p class="text-center"><a href="#">More Info</a></p>
 								</div>
 							</div>
@@ -70,7 +88,21 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 							<div class="col-md-12 card">
 								<div class="card-body">
 									<h1 class="card-title text-center display-4">Calls Taken</h1>
-									<h1 class="text-center">85%</h1>
+									<?php
+										if($result = mysqli_query($mysqli, $sql)){
+											if(mysqli_num_rows($result) > 0){
+												while($row = mysqli_fetch_array($result)){
+													echo "<h1 class='text-center'>" . $row['calls_taken'] . "</h1>";
+												}
+												// Close result set
+												mysqli_free_result($result);
+											} else{
+												echo "No records matching your query were found.";
+											}
+										} else{
+											echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+										}
+									?>
 									<p class="text-center"><a href="#">More Info</a></p>
 								</div>
 							</div>
