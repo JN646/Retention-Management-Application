@@ -32,7 +32,22 @@ $result = mysqli_query($mysqli, $sql);
 							<div class="col-md-12 card">
 								<div class="card-body">
 									<h1 class="card-title text-center display-4">Success Rate</h1>
-									<h1 class="text-center">85%</h1>
+									<?php
+										// Success Rate.
+										if($result = mysqli_query($mysqli, $sql)){
+											if(mysqli_num_rows($result) > 0){
+												while($row = mysqli_fetch_array($result)){
+													echo "<h1 class='text-center'>85%</h1>";
+												}
+												// Close result set
+												mysqli_free_result($result);
+											} else{
+												echo "No records matching your query were found.";
+											}
+										} else{
+											echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+										}
+									?>
 									<p class="text-center"><a href="#">More Info</a></p>
 								</div>
 							</div>
@@ -42,6 +57,7 @@ $result = mysqli_query($mysqli, $sql);
 								<div class="card-body">
 									<h1 class="card-title text-center display-4">Assigned</h1>
 									<?php
+										// Call Group display
 										if($result = mysqli_query($mysqli, $sql)){
 											if(mysqli_num_rows($result) > 0){
 												while($row = mysqli_fetch_array($result)){
@@ -86,6 +102,7 @@ $result = mysqli_query($mysqli, $sql);
 								<div class="card-body">
 									<h1 class="card-title text-center display-4">Calls Taken</h1>
 									<?php
+										// Calls Taken display
 										if($result = mysqli_query($mysqli, $sql)){
 											if(mysqli_num_rows($result) > 0){
 												while($row = mysqli_fetch_array($result)){
@@ -108,7 +125,22 @@ $result = mysqli_query($mysqli, $sql);
 							<div class="col-md-12 card">
 								<div class="card-body">
 									<h1 class="card-title text-center display-4">Link</h1>
-									<h1 class="text-center">-</h1>
+									<?php
+										// Blank Section
+										if($result = mysqli_query($mysqli, $sql)){
+											if(mysqli_num_rows($result) > 0){
+												while($row = mysqli_fetch_array($result)){
+													echo "<h1 class='text-center'>-</h1>";
+												}
+												// Close result set
+												mysqli_free_result($result);
+											} else{
+												echo "No records matching your query were found.";
+											}
+										} else{
+											echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+										}
+									?>
 									<p class="text-center"><a href="#">More Info</a></p>
 								</div>
 							</div>
@@ -117,7 +149,22 @@ $result = mysqli_query($mysqli, $sql);
 							<div class="col-md-12 card">
 								<div class="card-body">
 									<h1 class="card-title text-center display-4">Link</h1>
-									<h1 class="text-center">-</h1>
+									<?php
+										// Blank Section
+										if($result = mysqli_query($mysqli, $sql)){
+											if(mysqli_num_rows($result) > 0){
+												while($row = mysqli_fetch_array($result)){
+													echo "<h1 class='text-center'>-</h1>";
+												}
+												// Close result set
+												mysqli_free_result($result);
+											} else{
+												echo "No records matching your query were found.";
+											}
+										} else{
+											echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+										}
+									?>
 									<p class="text-center"><a href="#">More Info</a></p>
 								</div>
 							</div>
