@@ -25,7 +25,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 				</div>
 				<?php
 					//debug
-					$user_admin = FALSE;
+					$user_admin = TRUE;
 				
 					//If user admin
 					if($user_admin == TRUE){
