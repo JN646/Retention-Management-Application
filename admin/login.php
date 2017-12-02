@@ -1,50 +1,40 @@
 <?php
 // Include config file
 require_once($_SERVER["DOCUMENT_ROOT"] . "/reten/config/DBconfig.php");
-
 // Load Header
 include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
- 
 // Define variables and initialize with empty values
 $username = $password = "";
 $username_err = $password_err = "";
- 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
- 
     // Check if username is empty
     if(empty(trim($_POST["username"]))){
         $username_err = 'Please enter username.';
     } else{
         $username = trim($_POST["username"]);
     }
-    
     // Check if password is empty
     if(empty(trim($_POST['password']))){
         $password_err = 'Please enter your password.';
     } else{
         $password = trim($_POST['password']);
     }
-    
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
         $sql = "SELECT username, password FROM users WHERE username = ?";
-        
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
             $stmt->bind_param("s", $param_username);
-            
             // Set parameters
             $param_username = $username;
-            
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // Store result
                 $stmt->store_result();
-                
                 // Check if username exists, if yes then verify password
-                if($stmt->num_rows == 1){                    
+                if($stmt->num_rows == 1){
                     // Bind result variables
                     $stmt->bind_result($username, $hashed_password);
                     if($stmt->fetch()){
@@ -52,7 +42,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             /* Password is correct, so start a new session and
                             save the username to the session */
                             session_start();
-                            $_SESSION['username'] = $username;      
+                            $_SESSION['username'] = $username;
                             header("location: ../dashboard/dashboard.php");
                         } else{
                             // Display an error message if password is not valid
@@ -67,16 +57,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 echo "Oops! Something went wrong. Please try again later.";
             }
         }
-        
         // Close statement
         $stmt->close();
     }
-    
     // Close connection
     $mysqli->close();
 }
 ?>
-
 <body>
     <div class="container">
         <h2>Login</h2>
@@ -86,7 +73,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <label>Username:<sup>*</sup></label>
                 <input type="text" name="username"class="form-control" value="<?php echo $username; ?>">
                 <span class="help-block"><?php echo $username_err; ?></span>
-            </div>    
+            </div>
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <label>Password:<sup>*</sup></label>
                 <input type="password" name="password" class="form-control">
@@ -96,6 +83,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="submit" class="btn btn-primary" value="Submit">
             </div>
         </form>
-    </div>   
+    </div>
 <?php include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/footer.php"); ?></body>
 </html>
