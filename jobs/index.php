@@ -1,21 +1,23 @@
 <?php
-// Include config file
-require_once($_SERVER["DOCUMENT_ROOT"] . "/reten/config/DBconfig.php");
-// Load Header
-include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
-// Initialize the session
-session_start();
-// If session variable is not set it will redirect to login page
-if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
+require_once($_SERVER["DOCUMENT_ROOT"] . "/reten/config/DBconfig.php");		// Include config file
+include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");			// Load Header
+session_start();															// Initialise the session
+if(!isset($_SESSION['username']) || empty($_SESSION['username'])){			// If session variable is not set it will redirect to login page
   header("location: http://localhost/reten/admin/login.php");
   exit;
-}
- ?>
- <head>
-	<!--<META HTTP-EQUIV="refresh" CONTENT="5">-->
-	<title>Jobs</title>
- </head>
- <body>
+
+$username = $_SESSION['username'];
+  
+// Attempt select query execution
+$sql_users = "SELECT * FROM users WHERE username='$username'";
+$result = mysqli_query($mysqli, $sql);
+$rs = mysqli_fetch_array($result);
+
+$call_group = $rs['call_group'];
+
+} ?>
+<head><title>Jobs</title></head>
+<body>
 <div class="container-fluid">
 	<div class="col-md-12">
 		<div class="row">
@@ -26,33 +28,30 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 					<div class="col-md-9">
 						<h5>Tools</h5>
 						<ul class="nav">
-							<li class="nav-item">
-								<a class="nav-link" href="<?php echo $environment; ?>jobs/add_contact.php">Add Job</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#" id='trigger'>Preview</a>
-							</li>
+							<li class="nav-item"><a class="nav-link" href="<?php echo $environment; ?>jobs/add_contact.php">Add Job</a></li>
+							<li class="nav-item"><a class="nav-link" href="#" id='trigger'>Preview</a></li>
 						</ul>
 					</div>
 					<div class="col-md-3 border border-success">
 						<h5>Filters</h5>
-						<div class="form-check form-check-inline">
-							<label class="form-check-label"><input class="form-check-input" id="inlineCheckbox1" onkeyup="myFunction()" type="checkbox" value="Purple">Purple</label>
-						</div>
-						<div class="form-check form-check-inline">
-							<label class="form-check-label"><input class="form-check-input" id="inlineCheckbox2" type="checkbox" value="Red">Red</label>
-						</div>
-						<div class="form-check form-check-inline">
-							<label class="form-check-label"><input class="form-check-input" id="inlineCheckbox3" type="checkbox" value="Yellow">Yellow</label>
-						</div>
-						<div class="form-check form-check-inline">
-							<label class="form-check-label"><input class="form-check-input" id="inlineCheckbox2" type="checkbox" value="Green">Green</label>
-						</div>
+						<div class="form-check form-check-inline"><label class="form-check-label"><input class="form-check-input" id="inlineCheckbox1" onkeyup="myFunction()" type="checkbox" value="Purple">Purple</label></div>
+						<div class="form-check form-check-inline"><label class="form-check-label"><input class="form-check-input" id="inlineCheckbox2" type="checkbox" value="Red">Red</label></div>
+						<div class="form-check form-check-inline"><label class="form-check-label"><input class="form-check-input" id="inlineCheckbox3" type="checkbox" value="Yellow">Yellow</label></div>
+						<div class="form-check form-check-inline"><label class="form-check-label"><input class="form-check-input" id="inlineCheckbox2" type="checkbox" value="Green">Green</label></div>
 					</div>
 				</div><br>
 				<?php
 				// Attempt select query execution
-				$sql = "SELECT * FROM client_info";
+				$username = $_SESSION['username'];
+				  
+				// Attempt select query execution
+				$sql_users = "SELECT * FROM users WHERE username='$username'";
+				$result = mysqli_query($mysqli, $sql_users);
+				$rs = mysqli_fetch_array($result);
+
+				$call_group = $rs['call_group'];
+
+				$sql = "SELECT * FROM client_info WHERE client_group = '$call_group'";
 				if($result = mysqli_query($mysqli, $sql)){
 				    if(mysqli_num_rows($result) > 0){
 				        echo "<table id='table_search' class='table table-bordered'>";
@@ -174,7 +173,6 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 					}
 				</script>
 			</div>
-			<?php //include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/preview.php"); ?>
 		</div>
 	</div>
 </div>
