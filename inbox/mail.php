@@ -1,13 +1,10 @@
 <?php
 // Include config file
 require_once($_SERVER["DOCUMENT_ROOT"] . "/reten/config/DBconfig.php");
-
 // Load Header
 include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
-
 // Initialise the session
 session_start();
-
 // If session variable is not set it will redirect to login page
 if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
   header("location: http://localhost/reten/admin/login.php");
@@ -35,7 +32,6 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 					
 					// Attempt select query execution
 					$sql = "SELECT * FROM inbox";
-
 					// Push out data
 					if($result = mysqli_query($mysqli, $sql)){
 						if(mysqli_num_rows($result) > 0){
@@ -62,7 +58,6 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 									echo "<td class='text-center'>" . $row['email_from'] . "</td>";
 									echo "<td>" . $row['email_subject'] . "</td>";
 									echo "<td class='text-center'>" . $row['email_priority'] . "</td>";
-
 									// Email Read/Unread indicator
 									if($row['email_status'] == 1){
 										echo "<td class='text-center'><img src='../img/read.png' alt='Read' width='32' height='32'></td>";
@@ -70,7 +65,6 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 									else{
 										echo "<td class='text-center'><img src='../img/unread.png' alt='Read' width='32' height='32'></td>";
 									}
-
 									// Open email
 									echo "<td class='text-center'><a href=mail_view.php"./* $row['email_id']. */">Open</a></td>";
 								echo "</tr>";
@@ -84,7 +78,6 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 					} else{
 						echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
 					}
-
 					// Close connection
 					mysqli_close($mysqli);
 					?>
