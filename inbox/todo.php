@@ -3,7 +3,7 @@
 require_once($_SERVER["DOCUMENT_ROOT"] . "/reten/config/DBconfig.php");
 // Load Header
 include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
-// Initialize the session
+// Initialise the session
 session_start();
 // If session variable is not set it will redirect to login page
 if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
