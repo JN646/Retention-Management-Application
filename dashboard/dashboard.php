@@ -13,6 +13,10 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
   header("location: http://localhost/reten/admin/login.php");
   exit;
 }
+
+// Attempt select query execution
+$sql = "SELECT * FROM users WHERE username='JN646'";
+$result = mysqli_query($mysqli, $sql);
 ?>
 <head><title>Dashboard</title></head>
 <body>
@@ -22,7 +26,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 				<?php include("../partials/nav.php"); ?>
 				<div class="col-md-11">
 					<h1 class="display-4">Hi, <b><?php echo $_SESSION['username']; ?></b>. Welcome to your Dashboard.</h1>
-					<div class="alert alert-danger" role="alert">Feature not implemented yet.</div>
+					<div class="alert alert-warning" role="alert">Feature partially implemented.</div>
 					<div class="row">
 						<div class="col-md-4">
 							<div class="col-md-12 card">
@@ -33,18 +37,11 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 								</div>
 							</div>
 						</div>
-						<?php
-
-						?>
 						<div class="col-md-4">
 							<div class="col-md-12 card">
 								<div class="card-body">
 									<h1 class="card-title text-center display-4">Assigned</h1>
 									<?php
-										// Attempt select query execution
-										$sql = "SELECT * FROM users WHERE username='JN646'";
-										$result = mysqli_query($mysqli, $sql);
-										
 										if($result = mysqli_query($mysqli, $sql)){
 											if(mysqli_num_rows($result) > 0){
 												while($row = mysqli_fetch_array($result)){
