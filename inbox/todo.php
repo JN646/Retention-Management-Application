@@ -1,22 +1,17 @@
 <?php
 // Include config file
 require_once($_SERVER["DOCUMENT_ROOT"] . "/reten/config/DBconfig.php");
-
 // Load Header
 include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
-
 // Initialize the session
 session_start();
- 
 // If session variable is not set it will redirect to login page
 if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
   header("location: http://localhost/reten/admin/login.php");
   exit;
 }
 ?>
-<head>
-	<title>Todo</title>
-</head>
+<head><title>Todo</title></head>
 <body>
     <div class="container-fluid">
 		<div class="col-md-12">
@@ -76,7 +71,6 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 				} else{
 				    echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
 				}
-
 				// Close connection
 				mysqli_close($mysqli);
 				?>
@@ -101,7 +95,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 				</div>
 			</div>
 		</div>
-    </div>   
+    </div>
 <?php include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/footer.php"); ?>
 </body>
 </html>
