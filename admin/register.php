@@ -1,45 +1,35 @@
 <?php
 // Include config file
 require_once($_SERVER["DOCUMENT_ROOT"] . "/reten/config/DBconfig.php");
-
 // Load Header
 include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
-
 // Initialize the session
 session_start();
- 
 // If session variable is not set it will redirect to login page
 if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
   header("location: login.php");
   exit;
 }
-
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
- 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
- 
     // Validate username
     if(empty(trim($_POST["username"]))){
         $username_err = "Please enter a username.";
     } else{
         // Prepare a select statement
         $sql = "SELECT id FROM users WHERE username = ?";
-        
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
             $stmt->bind_param("s", $param_username);
-            
             // Set parameters
             $param_username = trim($_POST["username"]);
-            
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // store result
                 $stmt->store_result();
-                
                 if($stmt->num_rows == 1){
                     $username_err = "This username is already taken.";
                 } else{
@@ -49,11 +39,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 echo "Oops! Something went wrong. Please try again later.";
             }
         }
-         
         // Close statement
         $stmt->close();
     }
-    
     // Validate password
     if(empty(trim($_POST['password']))){
         $password_err = "Please enter a password.";     
@@ -62,7 +50,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     } else{
         $password = trim($_POST['password']);
     }
-    
     // Validate confirm password
     if(empty(trim($_POST["confirm_password"]))){
         $confirm_password_err = 'Please confirm password.';     
@@ -72,21 +59,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $confirm_password_err = 'Password did not match.';
         }
     }
-    
     // Check input errors before inserting in database
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
-        
         // Prepare an insert statement
         $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
-         
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
             $stmt->bind_param("ss", $param_username, $param_password);
-            
             // Set parameters
             $param_username = $username;
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
-            
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // Redirect to login page
@@ -95,16 +77,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 echo "Something went wrong. Please try again later.";
             }
         }
-         
         // Close statement
         $stmt->close();
     }
-    
     // Close connection
     $mysqli->close();
 }
 ?>
- 
 <body>
     <div class="container">
         <h2>Sign Up</h2>
