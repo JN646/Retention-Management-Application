@@ -10,9 +10,10 @@
 		<li class="nav-item"><a class="nav-link" href="<?php echo $environment; ?>inbox/mail.php">Inbox</a></li>
 		<li class="nav-item"><a class="nav-link" href="<?php echo $environment; ?>inbox/todo.php">Todo</a></li>
 	</ul>
-	<h5>Reports</h5>
+	<h5>Data</h5>
 	<ul class="nav flex-column">
-		<li class="nav-item"><a class="nav-link" href="<?php echo $environment; ?>export/index.php">Export</a></li>
+		<li class="nav-item"><a class="nav-link" href="<?php echo $environment; ?>import/import_index.php">Import</a></li>
+		<li class="nav-item"><a class="nav-link" href="<?php echo $environment; ?>export/export_index.php">Export</a></li>
 	</ul>
 	<h5>User</h5>
 	<ul class="nav flex-column">
