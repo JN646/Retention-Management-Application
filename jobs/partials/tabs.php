@@ -173,7 +173,7 @@
 					<br>
 					<h1 class="display-4">Notes</h1>
 					<form>
-						<textarea class="form-control" rows="4" cols="50"></textarea>
+						<textarea class="form-control" rows="15" cols="50"></textarea>
 						<br>
 						<button class="form-control btn btn-warning">Update</button>
 						<br>

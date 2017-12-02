@@ -14,10 +14,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
   exit;
 }
  ?>
- <head>
-	<!--<META HTTP-EQUIV="refresh" CONTENT="5">-->
-	<title>Details</title>
- </head>
+ <head><title>Details</title></head>
  <body>
 <div class="container-fluid">
 	<div class="col-md-12">
@@ -38,22 +35,22 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 					</div>
 				</div><br>
 				<div class="row">
-					<?php
-					//debug
-					$policynum = "1";
+					<div class="col-md-12">
+						<?php
+						//debug
+						$policynum = "1";
 
-					if(empty($policynum)) {
-						echo"<h3>Enter a Policy Number</h3>";
-						echo"<p>No records to show.</p>";
-					}
-					else {
-						//include details pane
-						include($_SERVER["DOCUMENT_ROOT"] . "/reten/jobs/partials/tabs.php");
-					}
-					?>
+						if(empty($policynum)) {
+							echo"<h3>Enter a Policy Number</h3>";
+							echo"<p>No records to show.</p>";
+						}
+						else {
+							//include details pane
+							include($_SERVER["DOCUMENT_ROOT"] . "/reten/jobs/partials/tabs.php");
+						}	?>
+					</div>
 				</div>
 			</div>
-			<?php //include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/preview.php"); ?>
 		</div>
 	</div>
 </div>
