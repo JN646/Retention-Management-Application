@@ -2,6 +2,6 @@
 <h2>Import Admin</h2>
 <p>Use this screen to import data.</p>
 <ul>
-	<li><a href="#">Import Data</a></li>
+	<li><a href="<?php echo $environment; ?>import/import_wizard.php">Import Wizard</a></li>
 	<li><a href="#">Previous Data</a></li>
 </ul>
