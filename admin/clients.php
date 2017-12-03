@@ -1,4 +1,9 @@
 <?php
+ /**
+  * Project:		Retention Management System
+  * Copyright:		(C) JGinn 2017
+  * FileCreated:	171203
+  */
 // Include config file
 require_once($_SERVER["DOCUMENT_ROOT"] . "/reten/config/DBconfig.php");
 

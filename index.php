@@ -1,4 +1,11 @@
-<?php include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php"); ?>
+<?php
+ /**
+  * Project:		Retention Management System
+  * Copyright:		(C) JGinn 2017
+  * FileCreated:	171203
+  */
+include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
+?>
 </head><title>RMS Home</title></head>
 <div class="container-fluid">
 	<div class="col-md-12">

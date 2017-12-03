@@ -1,3 +1,10 @@
+<?php
+ /**
+  * Project:		Retention Management System
+  * Copyright:		(C) JGinn 2017
+  * FileCreated:	171203
+  */
+?>
 <html>
  <head>
   <?php include($_SERVER["DOCUMENT_ROOT"] . "/reten/config/DBVar.php"); ?>

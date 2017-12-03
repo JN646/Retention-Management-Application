@@ -1,4 +1,9 @@
 <?php
+ /**
+  * Project:		Retention Management System
+  * Copyright:		(C) JGinn 2017
+  * FileCreated:	171203
+  */
 require_once($_SERVER["DOCUMENT_ROOT"] . "/reten/config/DBconfig.php");		// Include config file
 include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");			// Load Header
 session_start();															// Initialise the session

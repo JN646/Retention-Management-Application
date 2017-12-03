@@ -1,3 +1,10 @@
+<?php
+ /**
+  * Project:		Retention Management System
+  * Copyright:		(C) JGinn 2017
+  * FileCreated:	171203
+  */
+?>
 <footer>
 <hr>
 	<small><p style="text-align: center"><a href="<?php echo $environment; ?>static/help.php">Help</a></p></small>
