@@ -19,6 +19,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){			// If sessi
 				<h1>Data Import Wizard</h1>
 				<p>Use this system to add new books of business to the system.</p>
 				<p><b>WARNING: </b>Please ensure each step is completed with care. This operation can not be undone.</p>
+				<button>Get Started</button>
 			</div>
 		</div>
 	</div>
