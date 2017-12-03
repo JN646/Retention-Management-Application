@@ -15,7 +15,17 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
 }
 
 // Attempt select query execution
-$sql = "SELECT * FROM users WHERE username='JN646'";
+$username = $_SESSION['username'];
+  
+// Attempt select query execution
+$sql_users = "SELECT * FROM users WHERE username='$username'";
+$result = mysqli_query($mysqli, $sql_users);
+$rs = mysqli_fetch_array($result);
+
+$call_group = $rs['call_group'];
+
+// Attempt select query execution
+$sql = "SELECT * FROM users WHERE username='$username'";
 $result = mysqli_query($mysqli, $sql);
 ?>
 <head><title>Dashboard</title></head>
@@ -26,7 +36,6 @@ $result = mysqli_query($mysqli, $sql);
 				<?php include("../partials/nav.php"); ?>
 				<div class="col-md-11">
 					<h1 class="display-4">Hi, <b><?php echo $_SESSION['username']; ?></b>. Welcome to your Dashboard.</h1>
-					<div class="alert alert-warning" role="alert">Feature partially implemented.</div>
 					<div class="row">
 						<div class="col-md-4">
 							<div class="col-md-12 card">
@@ -37,7 +46,7 @@ $result = mysqli_query($mysqli, $sql);
 										if($result = mysqli_query($mysqli, $sql)){
 											if(mysqli_num_rows($result) > 0){
 												while($row = mysqli_fetch_array($result)){
-													echo "<h1 class='text-center'>85%</h1>";
+													echo "<h1 class='text-center'>" . $row['success_rate'] . "%</h1>";
 												}
 												// Close result set
 												mysqli_free_result($result);
@@ -80,14 +89,23 @@ $result = mysqli_query($mysqli, $sql);
 							<div class="col-md-12 card">
 								<div class="card-body">
 									<h1 class="card-title text-center display-4">EXP</h1>
-									<h1 class="text-center">0</h1>
-									<div class="progress">
 										<?php
-											//debug.
-											$expval = 10;
-
-											//progress bar.
-											echo"<div class='progress-bar' role='progressbar' style='width: 25%' aria-valuenow=$expval aria-valuemin='0' aria-valuemax='1000'></div>";
+											// Set experience bar.
+											if($result = mysqli_query($mysqli, $sql)){
+												if(mysqli_num_rows($result) > 0){
+													while($row = mysqli_fetch_array($result)){
+													echo"<h1 class='text-center'>" . $row['EXP'] . "/5000</h1>";
+													echo"<div class='progress'>";
+													echo"<div class='progress-bar' role='progressbar' style='width: 25%' aria-valuenow=" . $row['EXP'] . " aria-valuemin='0' aria-valuemax='5000'></div>";
+													}
+													// Close result set
+													mysqli_free_result($result);
+												} else{
+													echo "Major error";
+												}
+											} else{
+												echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+											}
 										?>
 									</div>
 									<p class="text-center"><a href="#">More Info</a></p>
