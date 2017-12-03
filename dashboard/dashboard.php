@@ -36,6 +36,7 @@ $result = mysqli_query($mysqli, $sql);
 				<?php include("../partials/nav.php"); ?>
 				<div class="col-md-11">
 					<h1 class="display-4">Hi, <b><?php echo $_SESSION['username']; ?></b>. Welcome to your Dashboard.</h1>
+					<br>
 					<div class="row">
 						<div class="col-md-4">
 							<div class="col-md-12 card">

@@ -34,7 +34,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){			// If sessi
 					<button class="btn btn-primary" value="Submit" name="mail" type="submit">Send</button>
 					<p><a href="mail.php">Back</a></p>
 				</form>
-				<?php>
+				<?php
 				// TODO add code that sets the read status
 				?>
 			</div>

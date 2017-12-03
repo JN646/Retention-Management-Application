@@ -25,9 +25,11 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){			// If sessi
 							</ul>
 						</div>
 					<?php
+					// Attempt select query execution
+					$username = $_SESSION['username'];
 					
 					// Attempt select query execution
-					$sql = "SELECT * FROM inbox";
+					$sql = "SELECT * FROM inbox WHERE email_recipient='$username'";
 					// Push out data
 					if($result = mysqli_query($mysqli, $sql)){
 						if(mysqli_num_rows($result) > 0){
@@ -69,7 +71,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){			// If sessi
 							// Free result set
 							mysqli_free_result($result);
 						} else{
-							echo "No mail were found.";
+							echo"<p class='text-center'>Mailbox is empty.</p>";
 						}
 					} else{
 						echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);

@@ -1,13 +1,11 @@
 <?php include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php"); ?>
-</head>
-	<title>RMS Home</title>
-</head>
+</head><title>RMS Home</title></head>
 <div class="container-fluid">
 	<div class="col-md-12">
 		<div class="row">
 			<?php include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/nav.php"); ?>
 			<div class="col-md-11">
-				<div class="jumbotron">
+				<div class="jumbotron jumbo">
 					<div class="row">
 						<div class="col-md-9">
 							<h1 class="display-2">Retention Management System</h1>
