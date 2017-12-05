@@ -1,8 +1,8 @@
 <?php
 // Load Header
 include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
-?>
-<head><title>Help</title></head>
+?><head><title>Help</title></head>
+
 <div class="container-fluid">
 	<div class="col-md-12">
 		<div class="row">
@@ -22,8 +22,8 @@ include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lobortis sem vitae pulvinar blandit. Aliquam nec accumsan tellus. Maecenas in velit odio. Donec accumsan dui eget lorem consectetur consectetur. Mauris dignissim, felis id pretium finibus, magna urna bibendum velit, ut elementum neque nunc ac odio. Aenean hendrerit facilisis lacus, quis pretium orci bibendum a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id cursus nunc, eu commodo urna. Cras eu justo sit amet ante dapibus malesuada id et odio. Nam venenatis nulla nisl, eu hendrerit leo faucibus ac.</p>
 				<h2>Dashboard</h2>
 				<ul>
-					<li><a href="success.php">Success Rate</a></li>
-					<li><a href="assigned_group.php">Assigned Group</a></li>
+					<li><a href="success_rate.php">Success Rate</a></li>
+				  <li><a href="assigned_group.php">Assigned Group</a></li>
 					<li><a href="exp.php">Experience Points</a></li>
 					<li><a href="calls_taken.php">Calls taken</a></li>
 				</ul>

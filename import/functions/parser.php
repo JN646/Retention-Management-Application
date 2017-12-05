@@ -13,10 +13,13 @@ $fileHandle = fopen("http://localhost/reten/import/data/data.csv", "r");
 //Loop through the CSV rows.
 echo "<table class='table'>";
 	echo "<tr>";
+		echo "<th>Title</th>";
 		echo "<th>First Name</th>";
 		echo "<th>Last Name</th>";
+		echo "<th>Address</th>";
 		echo "<th>City</th>";
 		echo "<th>Country</th>";
+		echo "<th>Policy #</th>";
 	echo "</tr>";
 while (($row = fgetcsv($fileHandle, 0, ",")) !== FALSE) {
 	echo "<tr>";
@@ -24,6 +27,9 @@ while (($row = fgetcsv($fileHandle, 0, ",")) !== FALSE) {
 		echo "<td>" . $row[1] . "</td>";
 		echo "<td>" . $row[2] . "</td>";
 		echo "<td>" . $row[3] . "</td>";
+		echo "<td>" . $row[4] . "</td>";
+		echo "<td>" . $row[5] . "</td>";
+		echo "<td>" . $row[6] . "</td>";
 	echo "</tr>";
 }
 echo "</table>";

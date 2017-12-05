@@ -13,12 +13,7 @@ if ($_POST['mail'] == 'Submit') {
 }
 
 if(mysqli_query($mysqli, $sql)){
-	echo "<br>";
-	echo "<div class='container'>";
-	echo "<h1>Thank you!</h1>";
-    echo "<p>Records added successfully.</p>";
-	echo "<p><a href='../mail.php'>Back</a></p>";
-	echo "</div>";
+	header("location: http://localhost/reten/inbox/mail.php");
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($mysqli);
 }
