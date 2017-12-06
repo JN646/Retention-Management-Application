@@ -5,6 +5,7 @@
   * FileCreated:	171206
   */
 require_once($_SERVER["DOCUMENT_ROOT"] . "/reten/config/DBVar.php");		// Include config file
+include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
 ?>
 <head>
   <link rel="stylesheet" type="text/css" href="bootstrap.css">
