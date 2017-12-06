@@ -20,7 +20,6 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){			// If sessi
 				<?php include("../partials/nav.php"); ?>
 				<div class="col-md-11">
 					<h1 class="display-4">Inbox</h1>
-						<div class="alert alert-warning" role="alert">Feature partially implemented.</div>
 						<div class="col-md-9">
 							<h5>Tools</h5>
 							<ul class="nav">
@@ -58,9 +57,30 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){			// If sessi
 										  </label>
 									</td>";
 									echo "<td class='text-center'>" . $row['email_date'] . "</td>";
-									echo "<td class='text-center'>" . $row['email_from'] . "</td>";
+									
+									// Look for NULL
+									if($row['email_from'] == ''){
+										echo "<td class='text-center'>Unknown</td>";										
+									} else{
+										echo "<td class='text-center'>" . $row['email_from'] . "</td>";
+									}
+									
 									echo "<td>" . $row['email_subject'] . "</td>";
-									echo "<td class='text-center'>" . $row['email_priority'] . "</td>";
+									
+									// Email priority colours and text.
+									if($row['email_priority'] == 3){
+										// High
+										echo "<td class='text-center' style='color: red'><b>High</b></td>";										
+									}
+									else if($row['email_priority'] == 2){
+										// Medium
+										echo "<td class='text-center' style='color: orange'>Medium</td>";										
+									}
+									else if($row['email_priority'] == 1){
+										// Low
+										echo "<td class='text-center' style='color: black'>Low</td>";										
+									}
+
 									// Email Read/Unread indicator
 									if($row['email_status'] == 1){
 										echo "<td class='text-center'><img src='../img/read.png' alt='Read' width='32' height='32'></td>";

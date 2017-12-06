@@ -19,9 +19,9 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){			// If sessi
 					<div class="col-md-12">
 						<form class="form-inline">
 							<div class="form-group col-md-10">
-								<input type="text" class="form-control col-md-10 form-control-lg" id="search" placeholder="Search Policy Number">
+								<input type="text" name="PolicyNum" class="form-control col-md-10 form-control-lg" id="search" placeholder="Search Policy Number">
 							</div>
-							<button type="submit" class="btn btn-primary col-md-2 form-control-lg">Search</button>
+							<button type="submit" method="post" class="btn btn-primary col-md-2 form-control-lg">Search</button>
 						</form>
 					</div>
 				</div><br>

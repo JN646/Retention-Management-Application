@@ -11,6 +11,10 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){			// If sessi
   header("location: http://localhost/reten/admin/login.php");
   exit;
 }
+
+if(isset($_GET['user'])) {
+		$user = $_GET['user'];
+}
 ?>
 <head><title>User Management</title></head>
 <body>
@@ -20,18 +24,13 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){			// If sessi
 				<?php include("../partials/nav.php"); ?>
 				<div class="col-md-11">
 					<h1 class="display-4">User Management</h1>
-						<div class="alert alert-warning" role="alert">
-							Feature partially implemented.
-						</div>
+					<?php echo "<h3>$user</h3>"; ?>
+						<div class="alert alert-warning" role="alert">Feature partially implemented.</div>
 						<div class="col-md-9">
 							<h5>Tools</h5>
 							<ul class="nav">
-								<li class="nav-item">
-									<a class="nav-link btn-outline-success" href="register.php">Add</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link btn-outline-danger" href="#">Delete</a>
-								</li>
+								<li class="nav-item"><a class="nav-link btn-outline-success" href="register.php">Add</a></li>
+								<li class="nav-item"><a class="nav-link btn-outline-danger" href="#">Delete</a></li>
 							</ul>
 						</div>
 					<?php
@@ -44,7 +43,6 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){			// If sessi
 								echo "<tr>";
 									echo "<th class='text-center'></th>";
 									echo "<th class='text-center' onclick='sortTable(1)'>Username</th>";
-									echo "<th class='text-center' onclick='sortTable(2)'>Password (DEBUG)</th>";
 									echo "<th class='text-center' onclick='sortTable(3)'>Created At</th>";
 									echo "<th class='text-center' onclick='sortTable(4)'>Group</th>";
 									echo "<th class='text-center' onclick='sortTable(5)'>Calls Taken</th>";
@@ -57,12 +55,11 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){			// If sessi
 								echo "<tr>";
 									echo "<td class='text-center' style='width: 16px'>
 									<div class='form-check'>
-										  <label class='form-check-label'>
+										<label class='form-check-label'>
 											<input class='form-check-input' type='checkbox' id='blankCheckbox' value='option1' aria-label='...'>
-										  </label>
+										</label>
 									</td>";
 									echo "<td class='text-center'>" . $row['username'] . "</td>";
-									echo "<td>" . $row['password'] . "</td>";
 									echo "<td class='text-center'>" . $row['created_at'] . "</td>";
 									
 									// Colour coding groups.
@@ -97,7 +94,11 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){			// If sessi
 									else{
 										echo "<td class='text-center'> </td>";
 									}
-									echo "<td class='text-center'><a href=#".$row['id']."><img src='../img/edit.png' alt='Edit' width='32' height='32'></a></td>";
+									
+									// Edit button.
+									echo "<td class='text-center'><button action='users.php' name='user' value=" .$row['id']. " method='post'>Edit</button></td>";
+									
+									//echo "<td class='text-center' action='users.php' method='post' name='user'><a href=".$row['id']."><img src='../img/edit.png' alt='Edit' width='32' height='32'></a></td>";
 								echo "</tr>";
 							}
 							echo "</table>";
