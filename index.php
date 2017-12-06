@@ -7,8 +7,7 @@
 // Include config file
 require_once($_SERVER["DOCUMENT_ROOT"] . "/reten/config/DBconfig.php");
 include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
-
-// Define variables and initialize with empty values
+// Define variables and initialise with empty values
 $username = $password = "";
 $username_err = $password_err = "";
 // Processing form data when form is submitted
@@ -44,8 +43,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $stmt->bind_result($username, $hashed_password);
                     if($stmt->fetch()){
                         if(password_verify($password, $hashed_password)){
-                            /* Password is correct, so start a new session and
-                            save the username to the session */
+                            // Password is correct, so start a new session and save the username to the session */
                             session_start();
                             $_SESSION['username'] = $username;
                             header("location: http://localhost/reten/dashboard/dashboard.php");
@@ -78,8 +76,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 				<div class="jumbotron jumbo">
 					<div class="row">
 						<div class="col-md-9">
-							<h1 class="display-2">Retention Management System</h1>
-							<h1 class="lead">Nothing Still Works. Sorry. Not Sorry.</h1>
+							<h1 class="display-2 text-center">Retention Management System</h1>
+							<h1 class="lead text-center">Nothing Still Works. Sorry. Not Sorry.</h1>
 						</div>
 						<div class="col-md-3">
 							<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">

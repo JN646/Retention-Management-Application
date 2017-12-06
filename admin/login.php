@@ -44,8 +44,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $stmt->bind_result($username, $hashed_password);
                     if($stmt->fetch()){
                         if(password_verify($password, $hashed_password)){
-                            /* Password is correct, so start a new session and
-                            save the username to the session */
+                            // Password is correct, so start a new session and save the username to the session */
                             session_start();
                             $_SESSION['username'] = $username;
                             header("location: http://localhost/reten/dashboard/dashboard.php");
