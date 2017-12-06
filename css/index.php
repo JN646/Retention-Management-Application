@@ -1,3 +1,11 @@
+<?php
+ /**
+  * Project:		Retention Management System
+  * Copyright:		(C) JGinn 2017
+  * FileCreated:	171206
+  */
+require_once($_SERVER["DOCUMENT_ROOT"] . "/reten/config/DBVar.php");		// Include config file
+?>
 <head>
   <link rel="stylesheet" type="text/css" href="bootstrap.css">
   <title>Style Test</title>
