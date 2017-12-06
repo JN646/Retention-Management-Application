@@ -24,7 +24,8 @@ include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
 									<label for="exampleInputEmail1">Username</label> <input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail1" placeholder="Enter email" type="email"> <small class="form-text text-muted" id="emailHelp">Use system username.</small>
 								</div>
 								<div class="form-group">
-									<label for="exampleInputPassword1">Password</label> <input class="form-control" id="exampleInputPassword1" placeholder="Password" type="password">
+									<label for="exampleInputPassword1">Password</label>
+									<input class="form-control" id="exampleInputPassword1" placeholder="Password" type="password">
 								</div><button class="btn btn-primary" type="submit">Submit</button>
 							</form>
 						</div>
