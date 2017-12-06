@@ -4,7 +4,7 @@
   * Copyright:		(C) JGinn 2017
   * FileCreated:	171206
   */
-require_once($_SERVER["DOCUMENT_ROOT"] . "/reten/config/DBVar.php");		// Include config file
+require_once($_SERVER["DOCUMENT_ROOT"] . "/reten/config/DBConfig.php");		// Include config file
 include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/header.php");
 ?>
 <head>
