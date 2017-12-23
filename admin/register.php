@@ -90,6 +90,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
 <body>
+<head>
+	<title>Register</title>
+</head>
     <div class="container">
         <h2>Sign Up</h2>
         <p>Please fill this form to create an account.</p>
