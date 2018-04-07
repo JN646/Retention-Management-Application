@@ -12,18 +12,21 @@ $username = $password = "";
 $username_err = $password_err = "";
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
+
     // Check if username is empty
     if(empty(trim($_POST["username"]))){
         $username_err = 'Please enter username.';
     } else{
         $username = trim($_POST["username"]);
     }
+
     // Check if password is empty
     if(empty(trim($_POST['password']))){
         $password_err = 'Please enter your password.';
     } else{
         $password = trim($_POST['password']);
     }
+
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
@@ -67,19 +70,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $mysqli->close();
 }
 ?>
+
+<!-- Header Content -->
 </head><title>RMS Home</title></head>
+
+<!-- Body -->
 <div class="container-fluid">
 	<div class="col-md-12">
 		<div class="row">
 			<?php include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/nav.php"); ?>
 			<div class="col-md-11">
+
+        <!-- Jumbotron -->
 				<div class="jumbotron jumbo">
 					<div class="row">
 						<div class="col-md-9">
 							<h1 class="display-2 text-center">Retention Management System</h1>
 							<h1 class="lead text-center">Nothing Still Works. Sorry. Not Sorry.</h1>
 						</div>
+
+            <!-- Form Container -->
 						<div class="col-md-3">
+              <!-- Form -->
 							<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 								<div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
 									<label>Username:<sup>*</sup></label>
@@ -95,10 +107,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 									<input type="submit" class="btn btn-primary" value="Submit">
 								</div>
 							</form>
+
 						</div>
 					</div>
 				</div>
+
+        <!-- Row -->
 				<div class="row">
+
+          <!-- Block 1 -->
 					<div class="col-md-4">
 						<div class="col-md-12 card">
 							<div class="card-body">
@@ -112,6 +129,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 							</div>
 						</div>
 					</div>
+
+          <!-- Block 2 -->
 					<div class="col-md-4">
 						<div class="col-md-12 card">
 							<div class="card-body">
@@ -125,6 +144,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 							</div>
 						</div>
 					</div>
+
+          <!-- Block 3 -->
 					<div class="col-md-4">
 						<div class="col-md-12 card">
 							<div class="card-body">
@@ -138,9 +159,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 							</div>
 						</div>
 					</div>
+
+          <!-- Close Divs -->
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+<!-- Footer -->
 <?php include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/footer.php"); ?>
