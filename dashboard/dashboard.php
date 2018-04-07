@@ -14,7 +14,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){			// If sessi
 
 // Attempt select query execution
 $username = $_SESSION['username'];
-  
+
 // Attempt select query execution
 $sql_users = "SELECT * FROM users WHERE username='$username'";
 $result = mysqli_query($mysqli, $sql_users);
@@ -26,16 +26,28 @@ $call_group = $rs['call_group'];
 $sql = "SELECT * FROM users WHERE username='$username'";
 $result = mysqli_query($mysqli, $sql);
 ?>
+
+<!-- Header Content -->
 <head><title>Dashboard</title></head>
+
+<!-- Body -->
 <body>
     <div class="container-fluid">
 		<div class="col-md-12">
 			<div class="row">
+
+				<!-- Include Nav -->
 				<?php include("../partials/nav.php"); ?>
+
+				<!-- Main Content -->
 				<div class="col-md-11">
+
+					<!-- Introduction -->
 					<h1 class="display-4">Hi, <b><?php echo $_SESSION['username']; ?></b>. Welcome to your Dashboard.</h1>
 					<br>
 					<div class="row">
+
+						<!-- Block 1 -->
 						<div class="col-md-4">
 							<div class="col-md-12 card">
 								<div class="card-body">
@@ -60,6 +72,8 @@ $result = mysqli_query($mysqli, $sql);
 								</div>
 							</div>
 						</div>
+
+						<!-- Block 2 -->
 						<div class="col-md-4">
 							<div class="col-md-12 card">
 								<div class="card-body">
@@ -84,6 +98,8 @@ $result = mysqli_query($mysqli, $sql);
 								</div>
 							</div>
 						</div>
+
+						<!-- Block 3 -->
 						<div class="col-md-4">
 							<div class="col-md-12 card">
 								<div class="card-body">
@@ -112,8 +128,13 @@ $result = mysqli_query($mysqli, $sql);
 							</div>
 						</div>
 					</div>
+
 					</br>
+
+					<!-- New Row -->
 					<div class="row">
+
+						<!-- Block 4 -->
 						<div class="col-md-4">
 							<div class="col-md-12 card">
 								<div class="card-body">
@@ -138,6 +159,8 @@ $result = mysqli_query($mysqli, $sql);
 								</div>
 							</div>
 						</div>
+
+						<!-- Block 5 -->
 						<div class="col-md-4">
 							<div class="col-md-12 card">
 								<div class="card-body">
@@ -162,6 +185,8 @@ $result = mysqli_query($mysqli, $sql);
 								</div>
 							</div>
 						</div>
+
+						<!-- Block 6 -->
 						<div class="col-md-4">
 							<div class="col-md-12 card">
 								<div class="card-body">
@@ -186,11 +211,15 @@ $result = mysqli_query($mysqli, $sql);
 								</div>
 							</div>
 						</div>
+
+						<!-- Close Divs -->
 					</div>
 				</div>
 			</div>
 		</div>
     </div>
+
+		<!-- Footer -->
 <?php include($_SERVER["DOCUMENT_ROOT"] . "/reten/partials/footer.php"); ?>
 </body>
 </html>
