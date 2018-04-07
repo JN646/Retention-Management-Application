@@ -12,11 +12,19 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){			// If sessi
   exit;
 }
 ?>
+
+<!-- Header Content -->
 <head><title>Mail</title></head>
+
+<!-- Body -->
 <body>
     <div class="container-fluid">
 		<div class="col-md-12">
+
+      <!-- Row -->
 			<div class="row">
+
+        <!-- Navigation Bar -->
 				<?php include("../partials/nav.php"); ?>
 				<div class="col-md-11">
 					<h1 class="display-4">Inbox</h1>
@@ -31,7 +39,7 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){			// If sessi
 					<?php
 					// Attempt select query execution
 					$username = $_SESSION['username'];
-					
+
 					// Attempt select query execution
 					$sql = "SELECT * FROM inbox WHERE email_recipient='$username'";
 					// Push out data
@@ -57,28 +65,28 @@ if(!isset($_SESSION['username']) || empty($_SESSION['username'])){			// If sessi
 										  </label>
 									</td>";
 									echo "<td class='text-center'>" . $row['email_date'] . "</td>";
-									
+
 									// Look for NULL
 									if($row['email_from'] == ''){
-										echo "<td class='text-center'>Unknown</td>";										
+										echo "<td class='text-center'>Unknown</td>";
 									} else{
 										echo "<td class='text-center'>" . $row['email_from'] . "</td>";
 									}
-									
+
 									echo "<td>" . $row['email_subject'] . "</td>";
-									
+
 									// Email priority colours and text.
 									if($row['email_priority'] == 3){
 										// High
-										echo "<td class='text-center' style='color: red'><b>High</b></td>";										
+										echo "<td class='text-center' style='color: red'><b>High</b></td>";
 									}
 									else if($row['email_priority'] == 2){
 										// Medium
-										echo "<td class='text-center' style='color: orange'>Medium</td>";										
+										echo "<td class='text-center' style='color: orange'>Medium</td>";
 									}
 									else if($row['email_priority'] == 1){
 										// Low
-										echo "<td class='text-center' style='color: black'>Low</td>";										
+										echo "<td class='text-center' style='color: black'>Low</td>";
 									}
 
 									// Email Read/Unread indicator
